@@ -16,9 +16,10 @@ body {
     background: url('../img/diamonds3.svg') repeat fixed 0 0 / cover rgba(0, 0, 0, 0);
 }
 
-/*p {
-    padding: 10px;
-}*/
+p {
+    /*padding: 10px;*/
+    text-align: center;
+}
 
 #wrapper {
     margin: 0 auto;
@@ -33,14 +34,14 @@ body {
 }
 
 #header {
-    height: 75px;
+    height: 125px;
     background: #6E3667;
     border-radius: 5px;
     border: 3px outset white;
     margin: 5px;
     text-align: center;
     vertical-align: middle;
-    font-size: 30px;
+    font-size: 45px;
 }
 
 #navigationwrap {
@@ -50,7 +51,10 @@ body {
 }
 
 #navigation {
-    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
     background: #88D317;
     border-radius: 5px;
     border: 3px outset white;
@@ -68,8 +72,9 @@ body {
     border-radius: 5px;
     border: 3px outset white;
     margin: 5px;
-    height: 844px;
+    height: 864px;
     width: 800px;
+
 }
 
 #leftcolumnwrap {
@@ -94,14 +99,13 @@ body {
 }
 
 #footer {
-    height: 40px;
+    height: 100px;
     background: #6E3667;
     border-radius: 5px;
     border: 3px outset white;
     margin: 5px;
     text-align: center;
     font-size: 9px;
-    vertical-align:  middle;
 }
 
 #button0{
@@ -140,13 +144,14 @@ body {
   color:white;
   font-size: 40px;
   align-items: center;
+  margin-bottom: 15px;
   /*transform: rotate(45deg);*/
 }
 
 .corporate {
 	float: left;
-	height: 45px;
-	width: 45px;
+	height: 100px;
+	width: 100px;
 }
 
 .square {
@@ -158,4 +163,17 @@ body {
   float: left;
   /*background-color: LightSlateGrey;*/
   text-align: center;
+}
+
+.button {
+  height: 70px;
+  width: 200px;
+  border: 10px outset white;
+  border-radius: 100px;
+ /* float: left;*/
+  /*background-color: LightSlateGrey;*/
+  text-align: center;
+  background-color: #57625A;
+  color: white;
+
 }
