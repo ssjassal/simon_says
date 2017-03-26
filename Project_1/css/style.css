@@ -1,0 +1,107 @@
+/*@import url("reset.css");*/
+
+*{
+padding : 0;
+margin : 0;
+border : 0;
+}
+
+body {
+    font-family: 'Rock Salt', cursive;
+    font-size: 13px;
+    color:#FFFFFF;
+/*    background-image: url('https://foodwithliving.files.wordpress.com/2013/05/popular-rainbow-colorful-colors-color-rainbow-high-quality-and.jpg');
+    background-attachment: top center;
+    background-size: cover;*/
+    background: url('../img/diamonds3.svg') repeat fixed 0 0 / cover rgba(0, 0, 0, 0);
+}
+
+/*p {
+    padding: 10px;
+}*/
+
+#wrapper {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#headerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#header {
+    height: 75px;
+    background: #6E3667;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+    text-align: center;
+    vertical-align: top;
+    font-size: 40px;
+}
+
+#navigationwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+}
+
+#navigation {
+    height: 40px;
+    background: #88D317;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+}
+
+#contentwrap {
+    width: 850px;
+    float: left;
+    margin: 0 auto;
+}
+
+#content {
+    background: #535353;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+}
+
+#leftcolumnwrap {
+    width: 150px;
+    float: left;
+    margin: 0 auto;
+}
+
+#leftcolumn {
+    background: #88D317;
+    border-radius: 5px;
+   border: 3px outset white;
+    margin: 5px;
+}
+
+#footerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer {
+    height: 40px;
+    background: #6E3667;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+    text-align: center;
+    font-size: 8px;
+}
+
+.corporate {
+	float: left;
+	height: 45px;
+	width: 45px;
+}
