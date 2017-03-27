@@ -189,6 +189,19 @@ p {
   color: white;
 }
 
+.button:disabled {
+  font-family: 'Rock Salt', cursive;
+  font-size: 15px;
+  height: 70px;
+  width: 200px;
+  border: 10px outset white;
+  border-radius: 100px;
+ /* float: left;*/
+  background-color: #57625A;
+  text-align: center;
+  color: white;
+  opacity: .7;
+}
 @-webkit-keyframes blinker {  
   from { opacity: 1.0; }
   to { opacity: 0.5; }
