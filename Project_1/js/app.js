@@ -17,9 +17,49 @@ $(function(){
 //Data & App Logic
 //====================================================
 	$levelSequence = [];
-	$round = 0;
-	$playerScore = 0;
-	$simonScore = 0;
+	round = 0;
+	playerScore = 0;
+	simonScore = 0;
+
+		var makeLevel	= function()
+	{
+
+		console.log('In the makeLevel function');
+		$level = $('#content p').text();
+
+		console.log($level);
+
+		if($level == 'Easy')
+		{	
+			console.log('easy peazy');
+			easyLevelObject();
+			playGame();
+
+			//lightUpBoard();
+			//console.log($levelSequence);
+		}
+		else if($level == 'Medium')
+		{
+			console.log('not so bad');
+			mediumLevelObject();
+			//lightUpBoard();
+
+		}
+		else if($level == 'Hard')
+		{
+			console.log('oh em gee');
+			hardLevelObject();
+			//lightUpBoard();
+
+		}else
+		{
+			console.log('uh-oh');
+			extremeLevelObject();
+			//lightUpBoard();
+
+		}
+
+	}
 
 	var easyLevelObject = function(){
 
@@ -349,55 +389,35 @@ $(function(){
 		}		
 	}
 
-	var makeLevel	= function()
-	{
-
-		console.log('In the makeLevel function');
-		$level = $('#content p').text();
-
-		console.log($level);
-
-		if($level == 'Easy')
-		{	
-			console.log('easy peazy');
-			easyLevelObject();
-			lightUpBoard();
-			//console.log($levelSequence);
-		}
-		else if($level == 'Medium')
-		{
-			console.log('not so bad');
-			mediumLevelObject();
-			lightUpBoard();
-
-		}
-		else if($level == 'Hard')
-		{
-			console.log('oh em gee');
-			hardLevelObject();
-			lightUpBoard();
-
-		}else
-		{
-			console.log('uh-oh');
-			extremeLevelObject();
-			lightUpBoard();
-
-		}
-
-	}
 //====================================================
 //Event Listeners
 //====================================================	
 
 	$levelButton.on('click', determineLevel);
-	$startGame.on('click', instantiateGame)
+	$startGame.on('click', makeLevel)
 
 });
 
 //====================================================
 //DOM Manipulation Functions
 //====================================================
+var instantiateGame = function(){
+
+	
+	$litSquare = $('#square0');
+	$litSquare.fadeTo(800, 0.5, function(){console.log('fading in to .5 opacity')});
+	// $litSquare.css({'animation':'blinker 6s linear 1'});
+	$litSquare = $('#square1');
+	$litSquare.fadeTo(1600, 0.5, function(){console.log('fading in to .5 opacity')});
+	// $litSquare.css({'animation':'blinker 6s linear 1'});
+	$litSquare = $('#square2');
+	$litSquare.fadeTo(2400, 0.5, function(){console.log('fading in to .5 opacity')});
+	// $litSquare.css({'animation':'blinker 6s linear 1'});
+	$litSquare = $('#square3');
+	$litSquare.fadeTo(3200, 0.5, function(){console.log('fading in to .5 opacity')});
+	// $litSquare.css({'animation':'blinker 6s linear 1'});
+
+}
 
 var createBoard = function(){
 	for (var i = 0; i < 4; i++) {
@@ -405,23 +425,11 @@ var createBoard = function(){
 		$content = $('#content');
 		var $square = $('<div>').attr('class',i).attr('id','square' + i);
 		$square.addClass('square');
-		$square.css('opacity','.5');
+		$square.css('opacity','0');
 		//console.log($square);
 		$content.append($square);
 	}
-}
-
-var instantiateGame = function(){
-
-	$litSquare = $('#square0');
-	$litSquare.fadeIn('slow');
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	// $litSquare = $('#square1');
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	// $litSquare = $('#square2');
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	// $litSquare = $('#square3');
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
+	instantiateGame();
 }
 
 var lightUpBoard = function (){
@@ -436,26 +444,50 @@ var lightUpBoard = function (){
 			if($light == 0)
 			{
 				console.log('Lighting up first square');
-				// $litSquare = $('#square0');
+				$litSquare = $('#square0');
+				$litSquare.fadeTo(4000, 1, function(){
+					console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(4000, .5, function(){
+					console.log('fading to .5 opacity');
+				});
 				// $litSquare.css({'animation':'blinker 6s linear 1'});
 
 			}else if($light == 1)
 			{
-				console.log('Lighting up first square');
-				// $litSquare = $('#square1');
+				console.log('Lighting up second square');
+				$litSquare = $('#square1');
 				// $litSquare.css({'animation':'blinker 6s linear 1'});
+				$litSquare.fadeTo(400, 1, function(){
+					console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(400, .5, function(){
+					console.log('fading to .5 opacity');
+				});
 
 			}else if($light == 2)
 			{
-				console.log('Lighting up first square');
-				// $litSquare = $('#square2');
+				console.log('Lighting up third square');
+				$litSquare = $('#square2');
 				// $litSquare.css({'animation':'blinker 6s linear 1'});
+				$litSquare.fadeTo(400, 1, function(){
+					console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(400, .5, function(){
+					console.log('fading to .5 opacity');
+				});
 
 			}else if($light == 3)
 			{
-				console.log('Lighting up first square');
-				// $litSquare = $('#square3');
+				console.log('Lighting up fourth square');
+				$litSquare = $('#square3');
 				// $litSquare.css({'animation':'blinker 6s linear 1'});
+				$litSquare.fadeTo(400, 1, function(){
+					console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(400, .5, function(){
+					console.log('fading to .5 opacity');
+				});
 
 			}
 		}
@@ -463,14 +495,21 @@ var lightUpBoard = function (){
 	
 }
 
-var lightUp = function(litSquare) {
+// var lightUp = function(litSquare) {
 
-	$litSquare = $(litSquare);
-	window.setTimeout(function() {
-	$litSquare = $('#square0');
-	$litSquare.css({'animation':'blinker 6s linear 1'});
-	}, 300);
+// 	$litSquare = $(litSquare);
+// 	window.setTimeout(function() {
+// 	$litSquare = $('#square0');
+// 	$litSquare.css({'animation':'blinker 6s linear 1'});
+// 	}, 300);
 
+// }
+
+var playGame = function(){
+
+	$displayRound = $('.round');
+	console.log($level);
+	//$level = $('#content p').text();
 }
 
 
