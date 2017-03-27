@@ -65,6 +65,7 @@ p {
     width: 800px;
     float: left;
     margin: 0 auto;
+    font-size: 25px;
 }
 
 #content {
@@ -119,6 +120,9 @@ p {
 }
 #button3{
     background-color:#B5E582;
+}
+#startGame{
+    background-color: #5F0F4E
 }
 
 .round{
