@@ -1,0 +1,200 @@
+/*@import url("reset.css");*/
+
+*{
+padding : 0;
+margin : 0;
+border : 0;
+}
+
+body {
+    font-family: 'Rock Salt', cursive;
+    font-size: 13px;
+    color:#FFFFFF;
+/*    background-image: url('https://foodwithliving.files.wordpress.com/2013/05/popular-rainbow-colorful-colors-color-rainbow-high-quality-and.jpg');
+    background-attachment: top center;
+    background-size: cover;*/
+    background: url('../img/diamonds3.svg') repeat fixed 0 0 / cover rgba(0, 0, 0, 0);
+}
+
+p {
+    /*padding: 10px;*/
+    text-align: center;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#headerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    background: #6E3667;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 45px;
+}
+
+#navigationwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+}
+
+#navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    background: #88D317;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+}
+
+#contentwrap {
+    width: 800px;
+    float: left;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+#content {
+    background: #535353;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+    height: 864px;
+    width: 800px;
+
+}
+
+#leftcolumnwrap {
+    width: 186px;
+    float: left;
+    margin: 0 auto;
+}
+
+#leftcolumn {
+    background: #88D317;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+    text-align: center;
+}
+
+#footerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background: #6E3667;
+    border-radius: 5px;
+    border: 3px outset white;
+    margin: 5px;
+    text-align: center;
+    font-size: 9px;
+    /*float:left;*/
+}
+
+#square0{
+    background-color:#1B7B34;
+}
+#square1{
+    background-color:#D48CF8;
+}
+#square2{
+    background-color:#3F3250;
+}
+#square3{
+    background-color:#B5E582;
+}
+#startGame{
+    background-color: #5F0F4E
+}
+
+.round{
+  display: inline-block;
+  border: 10px outset white;
+  border-radius: 25px;
+  height: 120px;
+  width: 120px;
+  background: black;
+  color:white;
+  font-size: 50px;
+  align-items: center;
+  /*transform: rotate(45deg);*/
+}
+
+.score{
+  display: inline-block;
+  border: 10px outset white;
+  border-radius: 25px;
+  height: 100px;
+  width: 100px;
+  background: RebeccaPurple;
+  color:white;
+  font-size: 40px;
+  align-items: center;
+  margin-bottom: 15px;
+  /*transform: rotate(45deg);*/
+}
+
+.corporate {
+	float: left;
+	height: 100px;
+	width: 100px;
+}
+
+.square {
+  display: inline-block;
+  height: 380px;
+  width: 380px;
+  border: 10px outset white;
+  border-radius: 100px;
+  float: left;
+  /*background-color: LightSlateGrey;*/
+  text-align: center;
+}
+
+.button {
+  font-family: 'Rock Salt', cursive;
+  font-size: 15px;
+  height: 70px;
+  width: 200px;
+  border: 10px outset white;
+  border-radius: 100px;
+ /* float: left;*/
+  background-color: #57625A;
+  text-align: center;
+  color: white;
+}
+
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.5; }
+}
+
+/*.lit {
+  opacity: .5;
+  transition: opacity 4s;
+}*/
