@@ -16,10 +16,149 @@ $(function(){
 //Data & App Logic
 //====================================================
 	$levelSequence = [];
-
 	$round = 0;
 	$playerScore = 0;
 	$simonScore = 0;
+
+	var easyLevelObject = function(){
+
+		for (var i = 1; i < 6; i++) 
+		{
+			$levelArray = [];
+			console.log('In the makeLevel FOR loop: ' + i);
+			if(i == 1)
+			{
+				console.log('round 1');
+				for (var j = 0; j < 4; j++) 
+				{
+					console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					//console.log($levelArray);
+				}
+				$levelSequence.push($levelArray);
+				//console.log($levelSequence);
+			}else if(i == 2)
+			{
+				console.log('round 2');
+				for (var j = 0; j < 5; j++) 
+				{
+					// $levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 3)
+			{
+				console.log('round 3');
+				for (var j = 0; j < 6; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 4)
+			{
+				console.log('round 4');
+				for (var j = 0; j < 7; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 5)
+			{
+				console.log('round 5');
+				for (var j = 0; j < 8; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+		}
+		// console.log($levelSequence);
+	}
+
+	var mediumLevelObject = function(){
+
+		for (var i = 1; i < 7; i++) 
+		{
+			$levelArray = [];
+			console.log('In the makeLevel FOR loop: ' + i);
+			if(i == 1)
+			{
+				console.log('round 1');
+				for (var j = 0; j < 4; j++) 
+				{
+					console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					//console.log($levelArray);
+				}
+				$levelSequence.push($levelArray);
+				//console.log($levelSequence);
+			}else if(i == 2)
+			{
+				console.log('round 2');
+				for (var j = 0; j < 6; j++) 
+				{
+					// $levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 3)
+			{
+				console.log('round 3');
+				for (var j = 0; j < 8; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 4)
+			{
+				console.log('round 4');
+				for (var j = 0; j < 10; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 5)
+			{
+				console.log('round 5');
+				for (var j = 0; j < 12; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+			else if(i == 6)
+			{
+				console.log('round 6');
+				for (var j = 0; j < 14; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+		}
+		console.log($levelSequence);
+	}
 //====================================================
 //Event Handlers
 //====================================================
@@ -69,81 +208,23 @@ $(function(){
 
 		if($level == 'Easy')
 		{	
-			console.log($level);
-			for (var i = 1; i < 6; i++) 
-			{
-				$levelArray = [];
-				console.log('In the makeLevel FOR loop: ' + i);
-				if(i == 1)
-				{
-					console.log('round 1')
-					for (var j = 0; j < 5; j++) 
-					{
-						console.log(j);
-						$levelArray.push(Math.floor(Math.random()*4));
-						
-						console.log($levelArray);
-						
-					}
-					$levelSequence.push($levelArray);
-					console.log($levelSequence);
-				}else if(i == 2)
-				{
-					for (var j = 0; j < 6; j++) 
-					{
-						// $levelArray.push(Math.floor(Math.random()*4));
-						// $levelSequence['round'+ i] = $levelArray;
-						console.log(j);
-						$levelArray.push(Math.floor(Math.random()*4));
-						
-						console.log($levelArray);
-						// console.log($levelSequence);
-					}
-					$levelSequence.push($levelArray);
-				}else if(i == 3)
-				{
-					for (var j = 0; j < 7; j++) 
-					{
-						$levelArray.push(Math.floor(Math.random()*4));
-						// $levelSequence['round'+ i] = $levelArray;
-						console.log($levelArray);
-						// console.log($levelSequence);
-					}
-					$levelSequence.push($levelArray);
-				}else if(i == 4)
-				{
-					for (var j = 0; j < 8; j++) 
-					{
-						$levelArray.push(Math.floor(Math.random()*4));
-						// $levelSequence['round'+ i] = $levelArray;
-					}
-					$levelSequence.push($levelArray);
-				}else if(i == 5)
-				{
-					for (var j = 0; j < 9; j++) 
-					{
-						$levelArray.push(Math.floor(Math.random()*4));
-						// $levelSequence['round'+ i] = $levelArray;
-					}
-					$levelSequence.push($levelArray);
-				}
-				// else 
-				//    {
-				//    		return;
-				//    }
-			}
+			console.log('easy peazy');
+			easyLevelObject();
 			console.log($levelSequence);
 		}
 		else if($level == 'Medium')
 		{
 			console.log('not so bad');
+			mediumLevelObject();
 		}
 		else if($level == 'Hard')
 		{
 			console.log('oh em gee');
+			hardLevelObject();
 		}else
 		{
 			console.log('uh-oh');
+			extremeLevelObject();
 		}
 
 	}
