@@ -4,7 +4,7 @@ $(function(){
 	console.log('In the jquery');
 	$levelSequence = [];
 	$playerSequence =[];
-	rounds = 0;
+	rounds = 1;
 	playerScore = 0;
 	simonScore = 0;
 	gameInPlay = false;
@@ -16,14 +16,31 @@ $(function(){
 	$levelButton = $('#levelChoice');
 	$longestButton = $('#longestSeq');
 	$startGame = $('#startGame');
+	$restartButton = $('#restartGame');
 	$lastButton = $('#lastSeq');
 	$muteButton = $('#muteSounds');
 
 //====================================================
 //DOM Manipulation Functions
 //====================================================
+	var resetGame = function(){
+		
+		$levelSequence = [];
+		$playerSequence =[];
+		rounds = 1;
+		playerScore = 0;
+		simonScore = 0;
+		gameInPlay = false;
+		// $('.square').unbind();
+		// $levelButton.unbind();
+		$levelButton.attr('class','button');
+		$displayRound.text('0');
+		$('#content p').text('Game On!');
+		instantiateGame();
+	}
+
 	var instantiateGame = function(){
-	
+
 	$litSquare = $('.square0');
 	$litSquare.animate(
 		{
@@ -83,6 +100,9 @@ $(function(){
 	var makeLevel	= function()
 	{
 		
+		gameInPlay = true;
+		$levelButton.prop('disabled', true);
+		// $levelButton.unbind();
 		console.log('In the makeLevel function');
 		$level = $('#content p').text();
 
@@ -435,7 +455,7 @@ $(function(){
 
 	//Help to get blinking squre from http://codepen.io/Vince_Brown/pen/Fzphm
 	var lightUpBoard = function (){
-		gameInPlay = true;
+		
 		console.log('In the lightUpBoard function');
 		//console.log($levelSequence);
 		//console.log($lightUp);
@@ -463,7 +483,7 @@ $(function(){
 	   	}, 100);
 
 	   	$playerSequence.push(pattern);
-	   	
+
 	   	if ($levelSequence[rounds - 1].length <= 0) {
 	   	  // add the click event once cpu is finished showing the pattern
 	   	  $('.square').on('click', playerClicks);
@@ -493,10 +513,12 @@ $(function(){
 
 		}else 
 		{
-		  $('#content p').text('Game Over, Click a Level to Restart');
-		  $levelSequence = [];
-		  $playerSequence = [];
+		  $('#content p').text('Game Over, Click Restart Game to Play Again');
 		  gameInPlay = false;
+		  // $levelButton.unbind();
+	 	  $restartButton.prop('disabled',false);
+	 	  $restartButton.on('click', resetGame);
+		  
 		}
 	}
 
@@ -506,15 +528,32 @@ $(function(){
 		if($level == 'Easy')
 		{
 			var roundMax = 5; 
-			rounds = 1;
 			if(rounds == 1 && rounds <= roundMax)
-			{
+			{	
 				$displayRound.text(rounds).delay(5000);
 				//console.log('displayed the current round');
 				lightUpBoard();
-			}
-			
-				
+			}else if(rounds == 2 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 3 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 4 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 5 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}	
 			
 		}
 		// else if($level == 'Medium')
@@ -543,12 +582,13 @@ $(function(){
 		
 		console.log('In the determineLevel function');
 		//console.log($(this).attr('class'));
-
+		
 		if($(this).attr('class') == 'button')
 		{
 			$('#content p').text('Easy');
 			$(this).addClass('clicked1');
 			$startGame.prop('disabled', false);
+
 		}
 		else if($(this).attr('class') == 'button clicked1')
 		{
@@ -586,7 +626,7 @@ $(function(){
 
 	$levelButton.on('click', determineLevel);
 	$startGame.on('click',function() {
-	  if(gameInPlay === false){
+	  if(gameInPlay == false){
 	    makeLevel();
 	  } 
 	});
