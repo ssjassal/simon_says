@@ -5,8 +5,8 @@ $(function(){
 	$levelSequence = [];
 	$playerSequence =[];
 	rounds = 1;
-	playerScore = 0;
-	simonScore = 0;
+	// playerScore = 0;
+	// simonScore = 0;
 	gameInPlay = false;
 
 //====================================================
@@ -505,9 +505,10 @@ $(function(){
 		  $levelSequence[rounds - 1].push($clickedSquare);
 
 		  if ($playerSequence.length <= 0) {
-		    rounds++;
 		    $('.round').text(rounds);
-
+		    var score
+		    // $('#player').text(rounds);
+		    rounds++;
 		    setTimeout(playGame, 800);
 		  }
 
@@ -516,6 +517,8 @@ $(function(){
 		  $('#content p').text('Game Over, Click Restart Game to Play Again');
 		  gameInPlay = false;
 		  // $levelButton.unbind();
+		  console.log(rounds);
+		  // $('#simon').text(rounds);
 	 	  $restartButton.prop('disabled',false);
 	 	  $restartButton.on('click', resetGame);
 		  
@@ -556,19 +559,113 @@ $(function(){
 			}	
 			
 		}
-		// else if($level == 'Medium')
-		// {
+		else if($level == 'Medium')
+		{
 		
-		// 	rounds = 6; 
-		// }
-		// else if($level == 'Hard')
-		// {
-		// 	rounds = 5; 
-		// }
-		// else if($level == 'Extreme')
-		// {
-		// 	rounds = 7;
-		// }
+			var roundMax = 6; 
+			if(rounds == 1 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 2 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 3 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 4 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 5 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 6 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}		
+		}
+		else if($level == 'Hard')
+		{
+			var roundMax = 5; 
+			if(rounds == 1 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 2 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 3 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 4 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 5 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}
+		}
+		else if($level == 'Extreme')
+		{
+			var roundMax = 7; 
+			if(rounds == 1 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 2 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 3 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 4 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 5 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}else if(rounds == 6 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}
+			else if(rounds == 7 && rounds <= roundMax)
+			{	
+				$displayRound.text(rounds).delay(5000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+			}
+		}
 
 		// $displayRound.text()
 		//console.log($level);
