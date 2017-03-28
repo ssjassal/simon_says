@@ -19,181 +19,63 @@ $(function(){
 //====================================================
 	var instantiateGame = function(){
 	
-	$litSquare = $('#square0');
-	$litSquare.fadeTo(800, 0.3, function(){//console.log('fading in to .3 opacity')
-	});
+	$litSquare = $('.square0');
+	$litSquare.animate(
+		{
+			opacity: 0.3
+	   	}, 400);
+	// fadeTo(400, 0.3, function(){//console.log('fading in to .3 opacity')
+	// });
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	$litSquare = $('#square1');
-	$litSquare.fadeTo(1600, 0.3, function(){//console.log('fading in to .3 opacity')
-	});
+	$litSquare = $('.square1');
+	$litSquare.animate(
+		{
+			opacity: 0.3
+	   	}, 400);
+	// fadeTo(1200, 0.3, function(){//console.log('fading in to .3 opacity')
+	// });
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	$litSquare = $('#square2');
-	$litSquare.fadeTo(2400, 0.3, function(){//console.log('fading in to .3 opacity')
-	});
+	$litSquare = $('.square2');
+	$litSquare.animate(
+		{
+			opacity: 0.3
+	   	}, 400);
+	// .fadeTo(2000, 0.3, function(){//console.log('fading in to .3 opacity')
+	// });
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	$litSquare = $('#square3');
-	$litSquare.fadeTo(3200, 0.3, function(){//console.log('fading in to .3 opacity')
-	});
+	$litSquare = $('.square3');
+	$litSquare.animate(
+		{
+			opacity: 0.3
+	   	}, 400);
+	// .fadeTo(3600, 0.3, function(){//console.log('fading in to .3 opacity')
+	// });
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
 	$levelButton.prop('disabled',false);
 
 	}
+
 	var createBoard = function(){
 		
 		for (var i = 0; i < 4; i++) {
 			// console.log('in FOR Loop: ' + i);
 			$content = $('#content');
-			var $square = $('<div>').attr('class',i).attr('id','square' + i);
-			$square.addClass('square');
+			var $square = $('<div>').attr('class','square' + i).attr('id',+ i);
 			$square.css('opacity','0');
-			//console.log($square);
+			$square.addClass('square');
+			console.log($square);
 			$content.append($square);
 		}
 		instantiateGame();
 	}
 
-	var lightUpBoard = function (array1){
 
-		console.log('In the lightUpBoard function');
-		//console.log($levelSequence);
-		$lightUp = array1;
-		console.log($lightUp);
-		for (var i = 0; i < $lightUp.length; i++) {
-
-			//console.log('In the lightUpBoard FOR loop')
-			console.log($lightUp[i]);
-			if($lightUp[i] == 0)
-			{
-				console.log('Lighting up first square');
-				$litSquare = $('#square0');
-				$litSquare.fadeTo(2000, 1, function(){
-					//console.log('fading to 1 opacity');
-				});
-				$litSquare.fadeTo(2000, .3, function(){
-					//console.log('fading to .3 opacity');
-				});
-
-				window.setTimeout(function(){}, 3000);
-				// $litSquare.css({'animation':'blinker 6s linear 1'});
-
-			}else if($lightUp[i] == 1)
-			{
-				console.log('Lighting up second square');
-				$litSquare = $('#square1');
-				// $litSquare.css({'animation':'blinker 6s linear 1'});
-				$litSquare.fadeTo(2000, 1, function(){
-					//console.log('fading to 1 opacity');
-				});
-				$litSquare.fadeTo(2000, .3, function(){
-					//console.log('fading to .3 opacity');
-				});
-
-				window.setTimeout(function(){}, 3000);
-
-			}else if($lightUp[i] == 2)
-			{
-				console.log('Lighting up third square');
-				$litSquare = $('#square2');
-				// $litSquare.css({'animation':'blinker 6s linear 1'});
-				$litSquare.fadeTo(2000, 1, function(){
-					//console.log('fading to 1 opacity');
-				});
-				$litSquare.fadeTo(2000, .3, function(){
-					//console.log('fading to .3 opacity');
-				});
-
-				window.setTimeout(function(){}, 3000);
-
-			}else if($lightUp[i] == 3)
-			{
-				console.log('Lighting up fourth square');
-				$litSquare = $('#square3');
-				// $litSquare.css({'animation':'blinker 6s linear 1'});
-				$litSquare.fadeTo(2000, 1, function(){
-					//console.log('fading to 1 opacity');
-				});
-				$litSquare.fadeTo(2000, .5, function(){
-					//console.log('fading to .5 opacity');
-				});
-
-				window.setTimeout(function(){}, 3000);
-			}
-		}
-		// for (var i = 0; i < $levelSequence.length; i++) {
-		// 	for (var j = 0; j < $levelSequence[i].length; j++) {
-		// 		$light = $levelSequence[i][j];
-
-		// 		if($light == 0)
-		// 		{
-		// 			console.log('Lighting up first square');
-		// 			$litSquare = $('#square0');
-		// 			$litSquare.fadeTo(4000, 1, function(){
-		// 				console.log('fading to 1 opacity');
-		// 			});
-		// 			$litSquare.fadeTo(4000, .5, function(){
-		// 				console.log('fading to .5 opacity');
-		// 			});
-		// 			// $litSquare.css({'animation':'blinker 6s linear 1'});
-
-		// 		}
-		// 	}
-
-		// 	$square.on('click',verifyColor);
-		// }
-		
-	}
-
-	// var lightUp = function(litSquare) {
-
-	// 	$litSquare = $(litSquare);
-	// 	window.setTimeout(function() {
-	// 	$litSquare = $('#square0');
-	// 	$litSquare.css({'animation':'blinker 6s linear 1'});
-	// 	}, 300);
-
-	// }
-
-	var playGame = function(){
-		console.log('In playGame functioon');
-		$displayRound = $('.round');
-		if($level == 'Easy')
-		{
-			var roundMax = 5; 
-			rounds = 1;
-			if(rounds == 1 && rounds <= roundMax)
-			{
-				$displayRound.text(rounds);
-				console.log('displayed the current round');
-				lightUpBoard($levelSequence[rounds - 1]);
-				rounds++;
-			}
-			
-				
-			
-		}
-		// else if($level == 'Medium')
-		// {
-		
-		// 	rounds = 6; 
-		// }
-		// else if($level == 'Hard')
-		// {
-		// 	rounds = 5; 
-		// }
-		// else if($level == 'Extreme')
-		// {
-		// 	rounds = 7;
-		// }
-
-		// $displayRound.text()
-		//console.log($level);
-		//$level = $('#content p').text();
-	}
 
 //====================================================
 //Data & App Logic
 //====================================================
 	$levelSequence = [];
+	$playerSequence =[];
 	rounds = 0;
 	playerScore = 0;
 	simonScore = 0;
@@ -208,7 +90,11 @@ $(function(){
 
 		if($level == 'Easy')
 		{	
-			console.log('easy peazy');
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('easy peazy');
 			easyLevelObject();
 			playGame();
 
@@ -217,7 +103,11 @@ $(function(){
 		}
 		else if($level == 'Medium')
 		{
-			console.log('not so bad');
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('not so bad');
 			mediumLevelObject();
 			playGame();
 			//lightUpBoard();
@@ -225,14 +115,22 @@ $(function(){
 		}
 		else if($level == 'Hard')
 		{
-			console.log('oh em gee');
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('oh em gee');
 			hardLevelObject();
 			playGame();
 			//lightUpBoard();
 
 		}else
 		{
-			console.log('uh-oh');
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('uh-oh');
 			extremeLevelObject();
 			playGame();
 			//lightUpBoard();
@@ -534,6 +432,70 @@ $(function(){
 	var verifyColor = function(){
 		console.log('In verifyColor function');
 	}
+	var lightUpBoard = function (){
+
+		console.log('In the lightUpBoard function');
+		//console.log($levelSequence);
+		//console.log($lightUp);
+		for (var i = 0; i < $levelSequence[rounds - 1].length; i++) {
+
+			//console.log('In the lightUpBoard FOR loop')
+			var delayTime = i * 600;
+
+			setTimeout(lightUpSquare, delayTime);
+		}
+	}
+			
+	var lightUpSquare = function() {
+
+		var pattern = $levelSequence[rounds - 1].pop();
+		console.log(pattern);
+		$('#' + pattern).animate(
+		{
+		     opacity: 0.3
+	   	}, 200).animate(
+	   	{
+		     opacity: 1
+	   	}, 100);
+	   	$playerSequence.push(pattern);
+	}
+
+	var playGame = function(){
+		console.log('In playGame functioon');
+		$displayRound = $('.round');
+		if($level == 'Easy')
+		{
+			var roundMax = 5; 
+			rounds = 1;
+			if(rounds == 1 && rounds <= roundMax)
+			{
+				$displayRound.text(rounds).delay(2000);
+				//console.log('displayed the current round');
+				lightUpBoard();
+				rounds++;
+			}
+			
+				
+			
+		}
+		// else if($level == 'Medium')
+		// {
+		
+		// 	rounds = 6; 
+		// }
+		// else if($level == 'Hard')
+		// {
+		// 	rounds = 5; 
+		// }
+		// else if($level == 'Extreme')
+		// {
+		// 	rounds = 7;
+		// }
+
+		// $displayRound.text()
+		//console.log($level);
+		//$level = $('#content p').text();
+	}
 //====================================================
 //Event Handlers
 //====================================================
@@ -593,4 +555,153 @@ $(function(){
 });
 
 
+
+//====================================================
+//Commented Code Possible Reuse
+//====================================================	
+	// switch($lightUp[i]){
+	// 	case 0:
+	// 		console.log('Lighting up first square');
+	// 		$litSquare = $('#square0');
+	// 		$litSquare.fadeTo(1000, 1, function(){
+	// 			//console.log('fading to 1 opacity');
+	// 		});
+	// 		$litSquare.fadeTo(1000, .3, function(){
+	// 			//console.log('fading to .3 opacity');
+	// 		});
+	// 		break;
+	// 	case 1:
+	// 		console.log('Lighting up second square');
+	// 		$litSquare = $('#square1');
+	// 		// $litSquare.css({'animation':'blinker 6s linear 1'});
+	// 		$litSquare.fadeTo(1000, 1, function(){
+	// 			//console.log('fading to 1 opacity');
+	// 		});
+	// 		$litSquare.fadeTo(1000, .3, function(){
+	// 			//console.log('fading to .3 opacity');
+	// 		});
+	// 		break;
+	// 	case 2:
+	// 		console.log('Lighting up third square');
+	// 		$litSquare = $('#square2');
+	// 		// $litSquare.css({'animation':'blinker 6s linear 1'});
+	// 		$litSquare.fadeTo(1000, 1, function(){
+	// 			//console.log('fading to 1 opacity');
+	// 		});
+	// 		$litSquare.fadeTo(1000, .3, function(){
+	// 			//console.log('fading to .3 opacity');
+	// 		});
+	// 		break;
+	// 	case 3:
+	// 		console.log('Lighting up fourth square');
+	// 		$litSquare = $('#square3');
+	// 		// $litSquare.css({'animation':'blinker 6s linear 1'});
+	// 		$litSquare.fadeTo(1000, 1, function(){
+	// 			//console.log('fading to 1 opacity');
+	// 		});
+	// 		$litSquare.fadeTo(1000, .3, function(){
+	// 			//console.log('fading to .3 opacity');
+	// 		});
+	// 		break;
+	// }
+	// if($lightUp[i] == 0)
+	// {
+	// 	console.log('Lighting up first square');
+	// 	$litSquare = $('#square0');
+	// 	$litSquare.fadeTo(1000, 1, function(){
+	// 		//console.log('fading to 1 opacity');
+	// 	});
+	// 	$litSquare.fadeTo(1000, .3, function(){
+	// 		//console.log('fading to .3 opacity');
+	// 	});
+
+	// 	//window.setTimeout(function(){}, 3000);
+	// 	// $litSquare.css({'animation':'blinker 6s linear 1'});
+
+	// }else if($lightUp[i] == 1)
+	// {
+	// 	console.log('Lighting up second square');
+	// 	$litSquare = $('#square1');
+	// 	// $litSquare.css({'animation':'blinker 6s linear 1'});
+	// 	$litSquare.fadeTo(1000, 1, function(){
+	// 		//console.log('fading to 1 opacity');
+	// 	});
+	// 	$litSquare.fadeTo(1000, .3, function(){
+	// 		//console.log('fading to .3 opacity');
+	// 	});
+
+	// 	//window.setTimeout(function(){}, 3000);
+
+	// }else if($lightUp[i] == 2)
+	// {
+	// 	console.log('Lighting up third square');
+	// 	$litSquare = $('#square2');
+	// 	// $litSquare.css({'animation':'blinker 6s linear 1'});
+	// 	$litSquare.fadeTo(1000, 1, function(){
+	// 		//console.log('fading to 1 opacity');
+	// 	});
+	// 	$litSquare.fadeTo(1000, .3, function(){
+	// 		//console.log('fading to .3 opacity');
+	// 	});
+
+	// 	//window.setTimeout(function(){}, 3000);
+
+	// }else if($lightUp[i] == 3)
+	// {
+	// 	console.log('Lighting up fourth square');
+	// 	$litSquare = $('#square3');
+	// 	// $litSquare.css({'animation':'blinker 6s linear 1'});
+	// 	$litSquare.fadeTo(1000, 1, function(){
+	// 		//console.log('fading to 1 opacity');
+	// 	});
+	// 	$litSquare.fadeTo(1000, .3, function(){
+	// 		//console.log('fading to .3 opacity');
+	// 	});
+
+	// 	//window.setTimeout(function(){}, 3000);
+	// }
+//}
+// for (var i = 0; i < $levelSequence.length; i++) {
+// 	for (var j = 0; j < $levelSequence[i].length; j++) {
+// 		$light = $levelSequence[i][j];
+
+// 		if($light == 0)
+// 		{
+// 			console.log('Lighting up first square');
+// 			$litSquare = $('#square0');
+// 			$litSquare.fadeTo(4000, 1, function(){
+// 				console.log('fading to 1 opacity');
+// 			});
+// 			$litSquare.fadeTo(4000, .5, function(){
+// 				console.log('fading to .5 opacity');
+// 			});
+// 			// $litSquare.css({'animation':'blinker 6s linear 1'});
+
+// 		}
+// 	}
+
+	// if($lightUp[i] == 0)
+	// {
+	// 	$litSquare = $('#square0').fadeOut(2000).delay(500);
+	// 	//$litSquare.css({'animation':'blinker 2s linear 1'});
+	// }
+	// if($lightUp[i] == 1)
+	// {
+	// 	$litSquare = $('#square1').fadeOut(2000).delay(500);
+	// 	$litSquare.css({'animation':'blinker 2s linear 1'});
+	// }
+
+
+
+
+
+// setInterval(function () {
+// 		    $('.star-1').fadeOut(150).delay(2000).fadeIn(300).fadeOut(150).delay(1254);
+// 	        $('.star-2').fadeOut(300).fadeIn(120).fadeOut(120).delay(1920);
+// 	        $('.star-3').fadeOut(150).delay(1200).fadeIn(300).fadeOut(150).delay(800);
+// 	        $('.star-4').fadeOut(700).fadeIn(300).fadeOut(160).delay(1350);
+// 	    }, 1);
+
+// 	$square.on('click',verifyColor);
+// }
 
