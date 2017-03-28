@@ -2,7 +2,12 @@ console.log('Simon has been initialized');
 
 $(function(){
 	console.log('In the jquery');
-	
+	$levelSequence = [];
+	$playerSequence =[];
+	rounds = 0;
+	playerScore = 0;
+	simonScore = 0;
+	gameInPlay = false;
 
 //====================================================
 //Grab Elements
@@ -63,7 +68,7 @@ $(function(){
 			var $square = $('<div>').attr('class','square' + i).attr('id',+ i);
 			$square.css('opacity','0');
 			$square.addClass('square');
-			console.log($square);
+			//console.log($square);
 			$content.append($square);
 		}
 		instantiateGame();
@@ -74,15 +79,10 @@ $(function(){
 //====================================================
 //Data & App Logic
 //====================================================
-	$levelSequence = [];
-	$playerSequence =[];
-	rounds = 0;
-	playerScore = 0;
-	simonScore = 0;
 
 	var makeLevel	= function()
 	{
-
+		
 		console.log('In the makeLevel function');
 		$level = $('#content p').text();
 
@@ -276,7 +276,7 @@ $(function(){
 				$levelSequence.push($levelArray);
 			}
 		}
-		console.log($levelSequence);
+		//console.log($levelSequence);
 	}
 
 	var hardLevelObject = function(){
@@ -341,7 +341,7 @@ $(function(){
 				$levelSequence.push($levelArray);
 			}
 		}
-		console.log($levelSequence);
+		//console.log($levelSequence);
 	}
 
 	var extremeLevelObject = function(){
@@ -426,14 +426,16 @@ $(function(){
 				$levelSequence.push($levelArray);
 			}
 		}
-		console.log($levelSequence);
+		//console.log($levelSequence);
 	}
 
 	var verifyColor = function(){
 		console.log('In verifyColor function');
 	}
-	var lightUpBoard = function (){
 
+	//Help to get blinking squre from http://codepen.io/Vince_Brown/pen/Fzphm
+	var lightUpBoard = function (){
+		gameInPlay = true;
 		console.log('In the lightUpBoard function');
 		//console.log($levelSequence);
 		//console.log($lightUp);
@@ -445,9 +447,11 @@ $(function(){
 			setTimeout(lightUpSquare, delayTime);
 		}
 	}
-			
+	
+	//Help to get blinking squre from http://codepen.io/Vince_Brown/pen/Fzphm		
 	var lightUpSquare = function() {
 
+		console.log('In the lightUpSquare function');
 		var pattern = $levelSequence[rounds - 1].pop();
 		console.log(pattern);
 		$('#' + pattern).animate(
@@ -457,7 +461,43 @@ $(function(){
 	   	{
 		     opacity: 1
 	   	}, 100);
+
 	   	$playerSequence.push(pattern);
+	   	
+	   	if ($levelSequence[rounds - 1].length <= 0) {
+	   	  // add the click event once cpu is finished showing the pattern
+	   	  $('.square').on('click', playerClicks);
+	   	}
+
+	}
+
+	var playerClicks = function(){
+
+		var $clickedSquare = $playerSequence.shift();
+
+		var $squareId = $(this).attr('id');
+
+		$(this).animate({opacity:.3},200).animate({opacity:1},100)
+
+		// if yes remove from used pattern and add to pattern
+		if ($clickedSquare == $squareId) {
+		  //adds item back to pattern array
+		  $levelSequence[rounds - 1].push($clickedSquare);
+
+		  if ($playerSequence.length <= 0) {
+		    rounds++;
+		    $('.round').text(rounds);
+
+		    setTimeout(playGame, 800);
+		  }
+
+		}else 
+		{
+		  $('#content p').text('Game Over, Click a Level to Restart');
+		  $levelSequence = [];
+		  $playerSequence = [];
+		  gameInPlay = false;
+		}
 	}
 
 	var playGame = function(){
@@ -469,10 +509,9 @@ $(function(){
 			rounds = 1;
 			if(rounds == 1 && rounds <= roundMax)
 			{
-				$displayRound.text(rounds).delay(2000);
+				$displayRound.text(rounds).delay(5000);
 				//console.log('displayed the current round');
 				lightUpBoard();
-				rounds++;
 			}
 			
 				
@@ -546,7 +585,11 @@ $(function(){
 //====================================================	
 
 	$levelButton.on('click', determineLevel);
-	$startGame.on('click', makeLevel)
+	$startGame.on('click',function() {
+	  if(gameInPlay === false){
+	    makeLevel();
+	  } 
+	});
 
 //====================================================
 //Game Play
