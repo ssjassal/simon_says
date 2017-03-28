@@ -90,441 +90,6 @@ $(function(){
 		}
 		instantiateGame();
 	}
-
-
-
-//====================================================
-//Data & App Logic
-//====================================================
-
-	var makeLevel	= function()
-	{
-		
-		gameInPlay = true;
-		$levelButton.prop('disabled', true);
-		// $levelButton.unbind();
-		console.log('In the makeLevel function');
-		$level = $('#content p').text();
-
-		console.log($level);
-
-		if($level == 'Easy')
-		{	
-			$('.square0').css('opacity','1');
-			$('.square1').css('opacity','1');
-			$('.square2').css('opacity','1');
-			$('.square3').css('opacity','1');
-			//console.log('easy peazy');
-			easyLevelObject();
-			playGame();
-
-			//lightUpBoard();
-			//console.log($levelSequence);
-		}
-		else if($level == 'Medium')
-		{
-			$('.square0').css('opacity','1');
-			$('.square1').css('opacity','1');
-			$('.square2').css('opacity','1');
-			$('.square3').css('opacity','1');
-			//console.log('not so bad');
-			mediumLevelObject();
-			playGame();
-			//lightUpBoard();
-
-		}
-		else if($level == 'Hard')
-		{
-			$('.square0').css('opacity','1');
-			$('.square1').css('opacity','1');
-			$('.square2').css('opacity','1');
-			$('.square3').css('opacity','1');
-			//console.log('oh em gee');
-			hardLevelObject();
-			playGame();
-			//lightUpBoard();
-
-		}else
-		{
-			$('.square0').css('opacity','1');
-			$('.square1').css('opacity','1');
-			$('.square2').css('opacity','1');
-			$('.square3').css('opacity','1');
-			//console.log('uh-oh');
-			extremeLevelObject();
-			playGame();
-			//lightUpBoard();
-
-		}
-
-	}
-
-	var easyLevelObject = function(){
-
-		for (var i = 1; i < 6; i++) 
-		{
-			$levelArray = [];
-			console.log('In the makeLevel FOR loop: ' + i);
-			if(i == 1)
-			{
-				console.log('round 1');
-				for (var j = 0; j < 4; j++) 
-				{
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					//console.log($levelArray);
-				}
-				$levelSequence.push($levelArray);
-				//console.log($levelSequence);
-			}else if(i == 2)
-			{
-				console.log('round 2');
-				for (var j = 0; j < 5; j++) 
-				{
-					// $levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 3)
-			{
-				console.log('round 3');
-				for (var j = 0; j < 6; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 4)
-			{
-				console.log('round 4');
-				for (var j = 0; j < 7; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 5)
-			{
-				console.log('round 5');
-				for (var j = 0; j < 8; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-		}
-		// console.log($levelSequence);
-	}
-
-	var mediumLevelObject = function(){
-
-		for (var i = 1; i < 7; i++) 
-		{
-			$levelArray = [];
-			console.log('In the makeLevel FOR loop: ' + i);
-			if(i == 1)
-			{
-				console.log('round 1');
-				for (var j = 0; j < 4; j++) 
-				{
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					//console.log($levelArray);
-				}
-				$levelSequence.push($levelArray);
-				//console.log($levelSequence);
-			}else if(i == 2)
-			{
-				console.log('round 2');
-				for (var j = 0; j < 6; j++) 
-				{
-					// $levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 3)
-			{
-				console.log('round 3');
-				for (var j = 0; j < 8; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 4)
-			{
-				console.log('round 4');
-				for (var j = 0; j < 10; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 5)
-			{
-				console.log('round 5');
-				for (var j = 0; j < 12; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-			else if(i == 6)
-			{
-				console.log('round 6');
-				for (var j = 0; j < 14; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-		}
-		//console.log($levelSequence);
-	}
-
-	var hardLevelObject = function(){
-
-		for (var i = 1; i < 6; i++) 
-		{
-			$levelArray = [];
-			console.log('In the makeLevel FOR loop: ' + i);
-			if(i == 1)
-			{
-				//console.log('round 1');
-				for (var j = 0; j < 4; j++) 
-				{
-					console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					//console.log($levelArray);
-				}
-				$levelSequence.push($levelArray);
-				//console.log($levelSequence);
-			}else if(i == 2)
-			{
-				console.log('round 2');
-				for (var j = 0; j < 8; j++) 
-				{
-					// $levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 3)
-			{
-				console.log('round 3');
-				for (var j = 0; j < 12; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 4)
-			{
-				console.log('round 4');
-				for (var j = 0; j < 16; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 5)
-			{
-				console.log('round 5');
-				for (var j = 0; j < 20; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-		}
-		//console.log($levelSequence);
-	}
-
-	var extremeLevelObject = function(){
-
-		for (var i = 1; i < 8; i++) 
-		{
-			$levelArray = [];
-			console.log('In the makeLevel FOR loop: ' + i);
-			if(i == 1)
-			{
-				console.log('round 1');
-				for (var j = 0; j < 4; j++) 
-				{
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					//console.log($levelArray);
-				}
-				$levelSequence.push($levelArray);
-				//console.log($levelSequence);
-			}else if(i == 2)
-			{
-				console.log('round 2');
-				for (var j = 0; j < 9; j++) 
-				{
-					// $levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 3)
-			{
-				console.log('round 3');
-				for (var j = 0; j < 14; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 4)
-			{
-				console.log('round 4');
-				for (var j = 0; j < 19; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 5)
-			{
-				console.log('round 5');
-				for (var j = 0; j < 24; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-			else if(i == 6)
-			{
-				console.log('round 6');
-				for (var j = 0; j < 29; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-			else if(i == 7)
-			{
-				console.log('round 7');
-				for (var j = 0; j < 34; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-		}
-		//console.log($levelSequence);
-	}
-
-	var verifyColor = function(){
-		console.log('In verifyColor function');
-	}
-
-	//Help to get blinking squre from http://codepen.io/Vince_Brown/pen/Fzphm
-	var lightUpBoard = function (){
-		
-		console.log('In the lightUpBoard function');
-		//console.log($levelSequence);
-		//console.log($lightUp);
-		for (var i = 0; i < $levelSequence[rounds - 1].length; i++) {
-
-			//console.log('In the lightUpBoard FOR loop')
-			var delayTime = i * 600;
-
-			setTimeout(lightUpSquare, delayTime);
-		}
-	}
-	
-	//Help to get blinking squre from http://codepen.io/Vince_Brown/pen/Fzphm		
-	var lightUpSquare = function() {
-
-		console.log('In the lightUpSquare function');
-		var pattern = $levelSequence[rounds - 1].pop();
-		console.log(pattern);
-		$('#' + pattern).animate(
-		{
-		     opacity: 0.3
-	   	}, 200).animate(
-	   	{
-		     opacity: 1
-	   	}, 100);
-
-	   	$playerSequence.push(pattern);
-
-	   	if ($levelSequence[rounds - 1].length <= 0) {
-	   	  // add the click event once cpu is finished showing the pattern
-	   	  $('.square').on('click', playerClicks);
-	   	}
-
-	}
-
-	var playerClicks = function(){
-
-		var $clickedSquare = $playerSequence.shift();
-
-		var $squareId = $(this).attr('id');
-
-		$(this).animate({opacity:.3},200).animate({opacity:1},100)
-
-		// if yes remove from used pattern and add to pattern
-		if ($clickedSquare == $squareId) {
-		  //adds item back to pattern array
-		  $levelSequence[rounds - 1].push($clickedSquare);
-
-		  if ($playerSequence.length <= 0) {
-		    $('.round').text(rounds);
-		    var score
-		    // $('#player').text(rounds);
-		    rounds++;
-		    setTimeout(playGame, 800);
-		  }
-
-		}else 
-		{
-		  $('#content p').text('Game Over, Click Restart Game to Play Again');
-		  gameInPlay = false;
-		  // $levelButton.unbind();
-		  console.log(rounds);
-		  // $('#simon').text(rounds);
-	 	  $restartButton.prop('disabled',false);
-	 	  $restartButton.on('click', resetGame);
-		  
-		}
-	}
-
 	var playGame = function(){
 		console.log('In playGame functioon');
 		$displayRound = $('.round');
@@ -671,6 +236,441 @@ $(function(){
 		//console.log($level);
 		//$level = $('#content p').text();
 	}
+
+	var makeLevel	= function()
+	{
+		
+		gameInPlay = true;
+		$levelButton.prop('disabled', true);
+		// $levelButton.unbind();
+		console.log('In the makeLevel function');
+		$level = $('#content p').text();
+
+		console.log($level);
+
+		if($level == 'Easy')
+		{	
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('easy peazy');
+			easyLevelObject();
+			playGame();
+
+			//lightUpBoard();
+			//console.log($levelSequence);
+		}
+		else if($level == 'Medium')
+		{
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('not so bad');
+			mediumLevelObject();
+			playGame();
+			//lightUpBoard();
+
+		}
+		else if($level == 'Hard')
+		{
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('oh em gee');
+			hardLevelObject();
+			playGame();
+			//lightUpBoard();
+
+		}else
+		{
+			$('.square0').css('opacity','1');
+			$('.square1').css('opacity','1');
+			$('.square2').css('opacity','1');
+			$('.square3').css('opacity','1');
+			//console.log('uh-oh');
+			extremeLevelObject();
+			playGame();
+			//lightUpBoard();
+
+		}
+
+	}
+
+//====================================================
+//Data & App Logic
+//====================================================
+	var easyLevelObject = function(){
+
+		for (var i = 1; i < 6; i++) 
+		{
+			$levelArray = [];
+			//console.log('In the makeLevel FOR loop: ' + i);
+			if(i == 1)
+			{
+				//console.log('round 1');
+				for (var j = 0; j < 4; j++) 
+				{
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					//console.log($levelArray);
+				}
+				$levelSequence.push($levelArray);
+				//console.log($levelSequence);
+			}else if(i == 2)
+			{
+				//console.log('round 2');
+				for (var j = 0; j < 5; j++) 
+				{
+					// $levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 3)
+			{
+				//console.log('round 3');
+				for (var j = 0; j < 6; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 4)
+			{
+				//console.log('round 4');
+				for (var j = 0; j < 7; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 5)
+			{
+				//console.log('round 5');
+				for (var j = 0; j < 8; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+		}
+		// console.log($levelSequence);
+	}
+
+	var mediumLevelObject = function(){
+
+		for (var i = 1; i < 7; i++) 
+		{
+			$levelArray = [];
+			//console.log('In the makeLevel FOR loop: ' + i);
+			if(i == 1)
+			{
+				//console.log('round 1');
+				for (var j = 0; j < 4; j++) 
+				{
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					//console.log($levelArray);
+				}
+				$levelSequence.push($levelArray);
+				//console.log($levelSequence);
+			}else if(i == 2)
+			{
+				//console.log('round 2');
+				for (var j = 0; j < 6; j++) 
+				{
+					// $levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 3)
+			{
+				//console.log('round 3');
+				for (var j = 0; j < 8; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 4)
+			{
+				//console.log('round 4');
+				for (var j = 0; j < 10; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 5)
+			{
+				//console.log('round 5');
+				for (var j = 0; j < 12; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+			else if(i == 6)
+			{
+				//console.log('round 6');
+				for (var j = 0; j < 14; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+		}
+		//console.log($levelSequence);
+	}
+
+	var hardLevelObject = function(){
+
+		for (var i = 1; i < 6; i++) 
+		{
+			$levelArray = [];
+			//console.log('In the makeLevel FOR loop: ' + i);
+			if(i == 1)
+			{
+				//console.log('round 1');
+				for (var j = 0; j < 4; j++) 
+				{
+					console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					//console.log($levelArray);
+				}
+				$levelSequence.push($levelArray);
+				//console.log($levelSequence);
+			}else if(i == 2)
+			{
+				//console.log('round 2');
+				for (var j = 0; j < 8; j++) 
+				{
+					// $levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 3)
+			{
+				//console.log('round 3');
+				for (var j = 0; j < 12; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 4)
+			{
+				//console.log('round 4');
+				for (var j = 0; j < 16; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 5)
+			{
+				//console.log('round 5');
+				for (var j = 0; j < 20; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+		}
+		//console.log($levelSequence);
+	}
+
+	var extremeLevelObject = function(){
+
+		for (var i = 1; i < 8; i++) 
+		{
+			$levelArray = [];
+			//console.log('In the makeLevel FOR loop: ' + i);
+			if(i == 1)
+			{
+				//console.log('round 1');
+				for (var j = 0; j < 4; j++) 
+				{
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					//console.log($levelArray);
+				}
+				$levelSequence.push($levelArray);
+				//console.log($levelSequence);
+			}else if(i == 2)
+			{
+				//console.log('round 2');
+				for (var j = 0; j < 9; j++) 
+				{
+					// $levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 3)
+			{
+				//console.log('round 3');
+				for (var j = 0; j < 14; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 4)
+			{
+				//console.log('round 4');
+				for (var j = 0; j < 19; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 5)
+			{
+				//console.log('round 5');
+				for (var j = 0; j < 24; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+			else if(i == 6)
+			{
+				//console.log('round 6');
+				for (var j = 0; j < 29; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+			else if(i == 7)
+			{
+				//console.log('round 7');
+				for (var j = 0; j < 34; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+		}
+		//console.log($levelSequence);
+	}
+
+
+	//Help to get blinking squre from http://codepen.io/Vince_Brown/pen/Fzphm
+	var lightUpBoard = function (){
+		
+		console.log('In the lightUpBoard function');
+		console.log($levelSequence);
+		//console.log($lightUp);
+		for (var i = 0; i < $levelSequence[rounds - 1].length; i++) {
+
+			console.log('In the lightUpBoard FOR loop');
+			console.log($levelSequence[rounds - 1]);
+			var delayTime = i * 600;
+			setTimeout(lightUpSquare, delayTime);
+		}
+	}
+	
+	//Help to get blinking squre from http://codepen.io/Vince_Brown/pen/Fzphm		
+	var lightUpSquare = function() {
+
+		console.log('In the lightUpSquare function');
+		var pattern = $levelSequence[rounds - 1].pop();
+		console.log(pattern);
+		$('#' + pattern).animate(
+		{
+		     opacity: 0.3
+	   	}, 200).animate(
+	   	{
+		     opacity: 1
+	   	}, 100);
+
+	   	$playerSequence.push(pattern);
+	   	console.log('playerSequence: ' + $playerSequence);
+
+	   	if ($levelSequence[rounds - 1].length <= 0) {
+	   	  // add the click event once cpu is finished showing the pattern
+	   	  $('.square').on('click', verifyColor);
+	   	}
+
+	}
+
+	var verifyColor = function(){
+
+		console.log('In the verfiyColor function');
+
+		var $clickedSquare = $playerSequence.shift();
+		var $squareId = $(this).attr('id');
+
+		$(this).animate({opacity:.3},200).animate({opacity:1},100)
+
+		// if yes remove from used pattern and add to pattern
+		console.log($clickedSquare ' + '$squareId)
+		if ($clickedSquare == $squareId) {
+		  //adds item back to pattern array
+		  $levelSequence[rounds - 1].push($clickedSquare);
+		  console.log('$levelSequence if correct: '+$levelSequence[rounds - 1]);
+
+		  if ($playerSequence.length <= 0) {
+		    $('.round').text(rounds);
+		    //var score
+		    // $('#player').text(rounds);
+		    rounds++;
+		    setTimeout(playGame, 800);
+		  }
+
+		}else 
+		{
+		  console.log('if incorrect: '+ $squareId);
+		  $('#content p').text('Game Over, Click Restart Game to Play Again');
+		  gameInPlay = false;
+		  // $levelButton.unbind();
+		  //console.log(rounds);
+		  // $('#simon').text(rounds);
+	 	  $restartButton.prop('disabled',false);
+	 	  $restartButton.on('click', resetGame);
+		  
+		}
+	}
+
+
 //====================================================
 //Event Handlers
 //====================================================
