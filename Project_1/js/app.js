@@ -20,16 +20,20 @@ $(function(){
 	var instantiateGame = function(){
 	
 	$litSquare = $('#square0');
-	$litSquare.fadeTo(800, 0.5, function(){console.log('fading in to .5 opacity')});
+	$litSquare.fadeTo(800, 0.3, function(){//console.log('fading in to .3 opacity')
+	});
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
 	$litSquare = $('#square1');
-	$litSquare.fadeTo(1600, 0.5, function(){console.log('fading in to .5 opacity')});
+	$litSquare.fadeTo(1600, 0.3, function(){//console.log('fading in to .3 opacity')
+	});
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
 	$litSquare = $('#square2');
-	$litSquare.fadeTo(2400, 0.5, function(){console.log('fading in to .5 opacity')});
+	$litSquare.fadeTo(2400, 0.3, function(){//console.log('fading in to .3 opacity')
+	});
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
 	$litSquare = $('#square3');
-	$litSquare.fadeTo(3200, 0.5, function(){console.log('fading in to .5 opacity')});
+	$litSquare.fadeTo(3200, 0.3, function(){//console.log('fading in to .3 opacity')
+	});
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
 	$levelButton.prop('disabled',false);
 
@@ -54,7 +58,67 @@ $(function(){
 		//console.log($levelSequence);
 		$lightUp = array1;
 		console.log($lightUp);
+		for (var i = 0; i < $lightUp.length; i++) {
 
+			//console.log('In the lightUpBoard FOR loop')
+			console.log($lightUp[i]);
+			if($lightUp[i] == 0)
+			{
+				console.log('Lighting up first square');
+				$litSquare = $('#square0');
+				$litSquare.fadeTo(2000, 1, function(){
+					//console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(2000, .3, function(){
+					//console.log('fading to .3 opacity');
+				});
+
+				window.setTimeout(function(){}, 3000);
+				// $litSquare.css({'animation':'blinker 6s linear 1'});
+
+			}else if($lightUp[i] == 1)
+			{
+				console.log('Lighting up second square');
+				$litSquare = $('#square1');
+				// $litSquare.css({'animation':'blinker 6s linear 1'});
+				$litSquare.fadeTo(2000, 1, function(){
+					//console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(2000, .3, function(){
+					//console.log('fading to .3 opacity');
+				});
+
+				window.setTimeout(function(){}, 3000);
+
+			}else if($lightUp[i] == 2)
+			{
+				console.log('Lighting up third square');
+				$litSquare = $('#square2');
+				// $litSquare.css({'animation':'blinker 6s linear 1'});
+				$litSquare.fadeTo(2000, 1, function(){
+					//console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(2000, .3, function(){
+					//console.log('fading to .3 opacity');
+				});
+
+				window.setTimeout(function(){}, 3000);
+
+			}else if($lightUp[i] == 3)
+			{
+				console.log('Lighting up fourth square');
+				$litSquare = $('#square3');
+				// $litSquare.css({'animation':'blinker 6s linear 1'});
+				$litSquare.fadeTo(2000, 1, function(){
+					//console.log('fading to 1 opacity');
+				});
+				$litSquare.fadeTo(2000, .5, function(){
+					//console.log('fading to .5 opacity');
+				});
+
+				window.setTimeout(function(){}, 3000);
+			}
+		}
 		// for (var i = 0; i < $levelSequence.length; i++) {
 		// 	for (var j = 0; j < $levelSequence[i].length; j++) {
 		// 		$light = $levelSequence[i][j];
@@ -70,42 +134,6 @@ $(function(){
 		// 				console.log('fading to .5 opacity');
 		// 			});
 		// 			// $litSquare.css({'animation':'blinker 6s linear 1'});
-
-		// 		}else if($light == 1)
-		// 		{
-		// 			console.log('Lighting up second square');
-		// 			$litSquare = $('#square1');
-		// 			// $litSquare.css({'animation':'blinker 6s linear 1'});
-		// 			$litSquare.fadeTo(4000, 1, function(){
-		// 				console.log('fading to 1 opacity');
-		// 			});
-		// 			$litSquare.fadeTo(4000, .5, function(){
-		// 				console.log('fading to .5 opacity');
-		// 			});
-
-		// 		}else if($light == 2)
-		// 		{
-		// 			console.log('Lighting up third square');
-		// 			$litSquare = $('#square2');
-		// 			// $litSquare.css({'animation':'blinker 6s linear 1'});
-		// 			$litSquare.fadeTo(4000, 1, function(){
-		// 				console.log('fading to 1 opacity');
-		// 			});
-		// 			$litSquare.fadeTo(4000, .5, function(){
-		// 				console.log('fading to .5 opacity');
-		// 			});
-
-		// 		}else if($light == 3)
-		// 		{
-		// 			console.log('Lighting up fourth square');
-		// 			$litSquare = $('#square3');
-		// 			// $litSquare.css({'animation':'blinker 6s linear 1'});
-		// 			$litSquare.fadeTo(4000, 1, function(){
-		// 				console.log('fading to 1 opacity');
-		// 			});
-		// 			$litSquare.fadeTo(4000, .5, function(){
-		// 				console.log('fading to .5 opacity');
-		// 			});
 
 		// 		}
 		// 	}
@@ -547,7 +575,7 @@ $(function(){
 		}else if($(this).attr('class') == "button clicked4")
 		{
 			$(this).removeClass('clicked4');
-	
+
 		}		
 	}
 
