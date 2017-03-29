@@ -2,46 +2,54 @@ console.log('Simon has been initialized');
 
 $(function(){
 	console.log('In the jquery');
-	$levelSequence = [];
-	$playerSequence =[];
-	rounds = 1;
+	var $levelSequence = [];
+	var $playerSequence = [];
+	var longestArray = [];
+	var rounds = 1;
 	// playerScore = 0;
 	// simonScore = 0;
-	gameInPlay = false;
+	var gameInPlay = false;
+	var tempArray = [];
 
 //====================================================
 //Grab Elements
 //====================================================
 	
-	$levelButton = $('#levelChoice');
-	$longestButton = $('#longestSeq');
-	$startGame = $('#startGame');
-	$restartButton = $('#restartGame');
-	$lastButton = $('#lastSeq');
-	$muteButton = $('#muteSounds');
+	var $levelButton = $('#levelChoice');
+	var $longestButton = $('#longestSeq');
+	var $startGame = $('#startGame');
+	var $restartButton = $('#restartGame');
+	var $lastButton = $('#lastSeq');
+	var $muteButton = $('#muteSounds');
 
 //====================================================
 //DOM Manipulation Functions
 //====================================================
-	var resetGame = function(){
+	var resetGame = function(){ //NEED TO REVISIT
 		
 		$levelSequence = [];
 		$playerSequence =[];
 		rounds = 1;
-		playerScore = 0;
-		simonScore = 0;
+		// playerScore = 0;
+		// simonScore = 0;
 		gameInPlay = false;
 		// $('.square').unbind();
 		// $levelButton.unbind();
 		$levelButton.attr('class','button');
+		$displayRound = $('.round');
 		$displayRound.text('0');
 		$('#content p').text('Game On!');
+		$('.square').unbind();
+		$longestButton.prop('disabled',true);
+		$restartButton.prop('disabled',true);
+		$lastButton.prop('disabled',true);
+		$startGame.prop('disabled',true);
 		instantiateGame();
 	}
 
 	var instantiateGame = function(){
 
-	$litSquare = $('.square0');
+	var $litSquare = $('.square0');
 	$litSquare.animate(
 		{
 			opacity: 0.3
@@ -49,7 +57,7 @@ $(function(){
 	// fadeTo(400, 0.3, function(){//console.log('fading in to .3 opacity')
 	// });
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	$litSquare = $('.square1');
+	var $litSquare = $('.square1');
 	$litSquare.animate(
 		{
 			opacity: 0.3
@@ -57,7 +65,7 @@ $(function(){
 	// fadeTo(1200, 0.3, function(){//console.log('fading in to .3 opacity')
 	// });
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	$litSquare = $('.square2');
+	var $litSquare = $('.square2');
 	$litSquare.animate(
 		{
 			opacity: 0.3
@@ -65,7 +73,7 @@ $(function(){
 	// .fadeTo(2000, 0.3, function(){//console.log('fading in to .3 opacity')
 	// });
 	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	$litSquare = $('.square3');
+	var $litSquare = $('.square3');
 	$litSquare.animate(
 		{
 			opacity: 0.3
@@ -81,7 +89,7 @@ $(function(){
 		
 		for (var i = 0; i < 4; i++) {
 			// console.log('in FOR Loop: ' + i);
-			$content = $('#content');
+			var $content = $('#content');
 			var $square = $('<div>').attr('class','square' + i).attr('id',+ i);
 			$square.css('opacity','0');
 			$square.addClass('square');
@@ -90,9 +98,16 @@ $(function(){
 		}
 		instantiateGame();
 	}
+
+	var roundWinner = function(){
+
+		console.log('In the roundWinner function');
+		console.log('You have won the game');
+		$('#startGame').text('Congratulations! You have beaten the level!');
+	}
 	var playGame = function(){
 		console.log('In playGame functioon');
-		$displayRound = $('.round');
+		var $displayRound = $('.round');
 		if($level == 'Easy')
 		{
 			var roundMax = 5; 
@@ -121,7 +136,10 @@ $(function(){
 				$displayRound.text(rounds).delay(5000);
 				//console.log('displayed the current round');
 				lightUpBoard();
-			}	
+			}else
+			{
+				roundWinner();
+			}
 			
 		}
 		else if($level == 'Medium')
@@ -158,7 +176,10 @@ $(function(){
 				$displayRound.text(rounds).delay(5000);
 				//console.log('displayed the current round');
 				lightUpBoard();
-			}		
+			}else
+			{
+				roundWinner();
+			}	
 		}
 		else if($level == 'Hard')
 		{
@@ -188,6 +209,9 @@ $(function(){
 				$displayRound.text(rounds).delay(5000);
 				//console.log('displayed the current round');
 				lightUpBoard();
+			}else
+			{
+				roundWinner();
 			}
 		}
 		else if($level == 'Extreme')
@@ -229,12 +253,11 @@ $(function(){
 				$displayRound.text(rounds).delay(5000);
 				//console.log('displayed the current round');
 				lightUpBoard();
+			}else
+			{
+				roundWinner();
 			}
 		}
-
-		// $displayRound.text()
-		//console.log($level);
-		//$level = $('#content p').text();
 	}
 
 	var makeLevel	= function()
@@ -256,6 +279,7 @@ $(function(){
 			$('.square3').css('opacity','1');
 			//console.log('easy peazy');
 			easyLevelObject();
+			$longestButton.prop('disabled', false);
 			playGame();
 
 			//lightUpBoard();
@@ -269,6 +293,7 @@ $(function(){
 			$('.square3').css('opacity','1');
 			//console.log('not so bad');
 			mediumLevelObject();
+			$longestButton.prop('disabled', false);
 			playGame();
 			//lightUpBoard();
 
@@ -281,6 +306,7 @@ $(function(){
 			$('.square3').css('opacity','1');
 			//console.log('oh em gee');
 			hardLevelObject();
+			$longestButton.prop('disabled', false);
 			playGame();
 			//lightUpBoard();
 
@@ -292,6 +318,7 @@ $(function(){
 			$('.square3').css('opacity','1');
 			//console.log('uh-oh');
 			extremeLevelObject();
+			$longestButton.prop('disabled', false);
 			playGame();
 			//lightUpBoard();
 
@@ -672,7 +699,63 @@ $(function(){
 		}
 	}
 
-	var lastSequence = function (){
+
+
+//====================================================
+//Event Handlers
+//====================================================
+
+	var determineLevel = function(){
+		
+		console.log('In the determineLevel function');
+		//console.log($(this).attr('class'));
+		
+		if($(this).attr('class') == 'button')
+		{
+			$('#content p').text('Easy');
+			$(this).addClass('clicked1');
+			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
+			//$longestButton.prop('disabled', false);
+
+		}
+		else if($(this).attr('class') == 'button clicked1')
+		{
+			$('#content p').text('Medium');
+			$(this).removeClass('clicked1');
+			$(this).addClass('clicked2');
+			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
+			//$longestButton.prop('disabled', false);
+			// $levelButton.on('click', determineLevel);
+
+		}else if($(this).attr('class') == 'button clicked2')
+		{
+			$('#content p').text('Hard');
+			$(this).removeClass('clicked2');
+			$(this).addClass('clicked3');
+			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
+			//$longestButton.prop('disabled', false);
+			// $levelButton.on('click', determineLevel);
+
+		}else if($(this).attr('class') == 'button clicked3')
+		{
+			$('#content p').text('Extreme');
+			$(this).removeClass('clicked3');
+			$(this).addClass('clicked4');
+			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
+			//$longestButton.prop('disabled', false);
+			// $levelButton.on('click', determineLevel);
+		}else if($(this).attr('class') == "button clicked4")
+		{
+			$(this).removeClass('clicked4');
+
+		}		
+	}
+
+		var lastSequence = function (){
 
 		console.log('In the lastSequence function');
 		console.log($playerSequence);
@@ -692,54 +775,25 @@ $(function(){
 
 	}
 
-//====================================================
-//Event Handlers
-//====================================================
+	var longestSequence = function(sequenceNum){
+		// var tempArray = [];
+		console.log('In the longestSequence function');
 
-	var determineLevel = function(){
+		// console.log($longestArray);
+		// console.log($longestArray.length);
+		//var tempSquare = longestArray.pop();
+		//console.log(tempArray);
+		//var tempSquare = $levelSequence[rounds-1].pop();
+		console.log(sequenceNum);
+		$('#' + sequenceNum).animate(
+		{
+		     opacity: 0.3
+	   	}, 200).animate(
+	   	{
+		     opacity: 1
+	   	}, 100);
 		
-		console.log('In the determineLevel function');
-		//console.log($(this).attr('class'));
-		
-		if($(this).attr('class') == 'button')
-		{
-			$('#content p').text('Easy');
-			$(this).addClass('clicked1');
-			$startGame.prop('disabled', false);
-			$lastButton.prop('disabled', false);
-
-		}
-		else if($(this).attr('class') == 'button clicked1')
-		{
-			$('#content p').text('Medium');
-			$(this).removeClass('clicked1');
-			$(this).addClass('clicked2');
-			$startGame.prop('disabled', false);
-			$lastButton.prop('disabled', false);
-			// $levelButton.on('click', determineLevel);
-
-		}else if($(this).attr('class') == 'button clicked2')
-		{
-			$('#content p').text('Hard');
-			$(this).removeClass('clicked2');
-			$(this).addClass('clicked3');
-			$startGame.prop('disabled', false);
-			$lastButton.prop('disabled', false);
-			// $levelButton.on('click', determineLevel);
-
-		}else if($(this).attr('class') == 'button clicked3')
-		{
-			$('#content p').text('Extreme');
-			$(this).removeClass('clicked3');
-			$(this).addClass('clicked4');
-			$startGame.prop('disabled', false);
-			$lastButton.prop('disabled', false);
-			// $levelButton.on('click', determineLevel);
-		}else if($(this).attr('class') == "button clicked4")
-		{
-			$(this).removeClass('clicked4');
-
-		}		
+	   	//tempArray.push(tempSquare);
 	}
 
 //====================================================
@@ -757,6 +811,18 @@ $(function(){
 		{
 			setTimeout(lastSequence, (i * 600));
 		}
+	});
+	$longestButton.on('click',function(){
+		var length = $levelSequence.length;
+		//console.log('length of array: ' + length);
+		var longestArray = $levelSequence[length-1];
+		for (var i = 0; i < longestArray.length; i++) 
+		{
+			var sequence = longestArray[i];
+			console.log(sequence);
+			setTimeout(longestSequence(sequence), (i * 600));
+		}
+
 	});
 
 //====================================================
@@ -903,6 +969,9 @@ $(function(){
 	// }
 
 
+	// $displayRound.text()
+	//console.log($level);
+	//$level = $('#content p').text();
 
 
 
