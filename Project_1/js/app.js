@@ -642,7 +642,7 @@ $(function(){
 		$(this).animate({opacity:.3},200).animate({opacity:1},100)
 
 		// if yes remove from used pattern and add to pattern
-		console.log($clickedSquare ' + '$squareId)
+		console.log($clickedSquare+' '+' '+$SquareId);
 		if ($clickedSquare == $squareId) {
 		  //adds item back to pattern array
 		  $levelSequence[rounds - 1].push($clickedSquare);
