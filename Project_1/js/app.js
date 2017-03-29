@@ -1,3 +1,4 @@
+//UNCOMMENT SOUND IN INSTANTIATE GAME BEFORE PUSHING
 console.log('Simon has been initialized');
 
 $(function(){
@@ -12,9 +13,9 @@ $(function(){
 	var tempArray = [];
 	var soundsMuted = false;
 
-//====================================================
-//Grab Elements
-//====================================================
+//============================================================================================================
+//-----------------------------------------------Grab Elements------------------------------------------------
+//============================================================================================================
 	
 	var $levelButton = $('#levelChoice');
 	var $longestButton = $('#longestSeq');
@@ -33,9 +34,11 @@ $(function(){
 	var $audio8 = $('.8')[0];
 	var $audio9 = $('.9')[0];
 	var $audio10 = $('.10')[0];
-//====================================================
-//DOM Manipulation Functions
-//====================================================
+
+//============================================================================================================
+//-----------------------------------------DOM Manipulation Functions-----------------------------------------
+//============================================================================================================
+
 	var playAudio = function (audio){
 
 			//$('body').append($audio1);
@@ -85,7 +88,7 @@ $(function(){
 
 	var instantiateGame = function(){
 		if (soundsMuted == false){
-			playAudio($audio8);
+			//playAudio($audio8);
 		}
 		
 		setTimeout(function(){
@@ -781,8 +784,6 @@ $(function(){
 		}
 	}
 
-
-
 //====================================================
 //Event Handlers
 //====================================================
@@ -858,15 +859,22 @@ $(function(){
 	}
 
 	var longestSequence = function(sequenceNum){
+		// var sequenceArrayOne = [];
 		// var tempArray = [];
-		console.log('In the longestSequence function');
-
-		// console.log($longestArray);
-		// console.log($longestArray.length);
-		//var tempSquare = longestArray.pop();
-		//console.log(tempArray);
+		// console.log('In the longestSequence function');
+		// sequenceArrayOne = sequenceArray;
+		// //tempArray = sequenceArray;
+		//console.log(sequenceArray);
+		// // console.log($longestArray.length);
+		//var tempSquare = sequenceArray.pop();
+		// console.log(sequenceArrayOne);
 		//var tempSquare = $levelSequence[rounds-1].pop();
-		console.log(sequenceNum);
+	
+
+		//var tempmap = sequenceArray.map();
+		//console.log(tempmap);
+
+		//console.log('longestSequence function: ' + tempSquare);
 		$('#' + sequenceNum).animate(
 		{
 		     opacity: 0.3
@@ -876,6 +884,10 @@ $(function(){
 	   	}, 100);
 		
 	   	//tempArray.push(tempSquare);
+	   	// tempArray.reverse();
+	   	// var length = $levelSequence.length;
+	   	// $levelSequence[length-1] = tempArray;
+	   	// console.log(tempArray);
 	}
 
 //====================================================
@@ -901,10 +913,12 @@ $(function(){
 		var length = $levelSequence.length;
 		//console.log('length of array: ' + length);
 		var longestArray = $levelSequence[length-1];
+		console.log('befor FOR Loop Longest Array: ' + longestArray);
 		for (var i = 0; i < longestArray.length; i++) 
 		{
 			var sequence = longestArray[i];
-			console.log(sequence);
+			//console.log('longest array within FOR loop: '+ longestArray);
+			//console.log('In Longest Array listener FOR loop-array length: ' + longestArray.length);
 			setTimeout(longestSequence(sequence), (i * 600));
 		}
 
