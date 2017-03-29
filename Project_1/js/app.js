@@ -10,6 +10,7 @@ $(function(){
 	// simonScore = 0;
 	var gameInPlay = false;
 	var tempArray = [];
+	var soundsMuted = false;
 
 //====================================================
 //Grab Elements
@@ -41,6 +42,58 @@ $(function(){
 			audio.play();
 	}
 
+	var muteSounds = function(){
+
+		
+		console.log('In the muteSounds function');
+		if(soundsMuted == true)
+		{
+			soundsMuted = false;
+			$muteButton.text('Mute Sounds');
+
+		}else {
+			soundsMuted = true;
+			$muteButton.text('Unmute Sounds');
+		}
+
+		console.log(soundsMuted);
+
+		// if($('.button.mute') == 'mute')
+		// {
+		// 	$audio0.muted = false;
+		// 	$audio1.muted = false;
+		// 	$audio2.muted = false;
+		// 	$audio3.muted = false;
+		// 	$audio4.muted = false;
+		// 	$audio5.muted = false;
+		// 	$audio6.muted = false;
+		// 	$audio7.muted = false;
+		// 	$audio8.muted = false;
+		// 	$audio9.muted = false;
+		// 	$audio10.muted = false;
+		// 	$muteButton.removeClass('mute');
+		// 	$muteButton.text('Unmute Sounds');
+			
+		// }else
+		// {
+		// 	$audio0.muted = true;
+		// 	$audio1.muted = true;
+		// 	$audio2.muted = true;
+		// 	$audio3.muted = true;
+		// 	$audio4.muted = true;
+		// 	$audio5.muted = true;
+		// 	$audio6.muted = true;
+		// 	$audio7.muted = true;
+		// 	$audio8.muted = true;
+		// 	$audio9.muted = true;
+		// 	$audio10.muted = true;
+		// 	$muteButton.addClass('mute');
+		// 	$muteButton.text('Unmute Sounds');
+		// 	//$muteButton = $('.button mute');
+		// 	$muteButton.on('click', muteSounds);
+		// }
+	}
+
 	var resetGame = function(){ //NEED TO HAVE RESTART BUTTON AVAIALBLE DURING GAME PLAY AS WELL
 		
 		$levelSequence = [];
@@ -64,8 +117,10 @@ $(function(){
 	}
 
 	var instantiateGame = function(){
-
-		playAudio($audio8);
+		if (soundsMuted == false){
+			playAudio($audio8);
+		}
+		
 		setTimeout(function(){
 			var $litSquare = $('.square0');
 			$litSquare.animate(
@@ -100,6 +155,7 @@ $(function(){
 		// });
 		// $litSquare.css({'animation':'blinker 6s linear 1'});
 			$levelButton.prop('disabled',false);
+			$muteButton.prop('disabled',false);
 		},4000);
 	}
 
@@ -122,8 +178,11 @@ $(function(){
 		console.log('In the roundWinner function');
 		console.log('You have won the game');
 		$('#startGame').text('Congratulations! You have beaten the level!');
-		playAudio($audio9);
-		playAudio($audio10);
+		if (soundsMuted == false){
+			playAudio($audio9);
+			playAudio($audio10);
+		}
+		
 	}
 
 	var playGame = function(){
@@ -727,11 +786,13 @@ $(function(){
 		    //var score
 		    // $('#player').text(rounds);
 		    rounds++;
-		    playAudio($audio5);
+		    if (soundsMuted == false){
+		    	playAudio($audio5);
+		    }
 		    $('.round').text(rounds);
 		    $('.square').unbind();
 
-		    setTimeout(playGame, 5000);
+		    setTimeout(playGame, 3000);
 		  }
 
 		}else 
@@ -876,6 +937,8 @@ $(function(){
 		}
 
 	});
+
+	$muteButton.on('click', muteSounds);
 
 	$restartButton.on('click', resetGame);
 //====================================================
