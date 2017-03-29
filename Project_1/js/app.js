@@ -21,10 +21,26 @@ $(function(){
 	var $restartButton = $('#restartGame');
 	var $lastButton = $('#lastSeq');
 	var $muteButton = $('#muteSounds');
-
+	var $audio0 = $('.0')[0];
+	var $audio1 = $('.1')[0];
+	var $audio2 = $('.2')[0];
+	var $audio3 = $('.3')[0];
+	var $audio4 = $('.4')[0];
+	var $audio5 = $('.5')[0];
+	var $audio6 = $('.6')[0];
+	var $audio7 = $('.7')[0];
+	var $audio8 = $('.8')[0];
+	var $audio9 = $('.9')[0];
+	var $audio10 = $('.10')[0];
 //====================================================
 //DOM Manipulation Functions
 //====================================================
+	var playAudio = function (audio){
+
+			//$('body').append($audio1);
+			audio.play();
+	}
+
 	var resetGame = function(){ //NEED TO HAVE RESTART BUTTON AVAIALBLE DURING GAME PLAY AS WELL
 		
 		$levelSequence = [];
@@ -49,40 +65,42 @@ $(function(){
 
 	var instantiateGame = function(){
 
-	var $litSquare = $('.square0');
-	$litSquare.animate(
-		{
-			opacity: 0.3
-	   	}, 400);
-	// fadeTo(400, 0.3, function(){//console.log('fading in to .3 opacity')
-	// });
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	var $litSquare = $('.square1');
-	$litSquare.animate(
-		{
-			opacity: 0.3
-	   	}, 400);
-	// fadeTo(1200, 0.3, function(){//console.log('fading in to .3 opacity')
-	// });
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	var $litSquare = $('.square2');
-	$litSquare.animate(
-		{
-			opacity: 0.3
-	   	}, 400);
-	// .fadeTo(2000, 0.3, function(){//console.log('fading in to .3 opacity')
-	// });
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	var $litSquare = $('.square3');
-	$litSquare.animate(
-		{
-			opacity: 0.3
-	   	}, 400);
-	// .fadeTo(3600, 0.3, function(){//console.log('fading in to .3 opacity')
-	// });
-	// $litSquare.css({'animation':'blinker 6s linear 1'});
-	$levelButton.prop('disabled',false);
-
+		playAudio($audio8);
+		setTimeout(function(){
+			var $litSquare = $('.square0');
+			$litSquare.animate(
+			{
+				opacity: 0.3
+		   	}, 400);
+		// fadeTo(400, 0.3, function(){//console.log('fading in to .3 opacity')
+		// });
+		// $litSquare.css({'animation':'blinker 6s linear 1'});
+			var $litSquare = $('.square1');
+			$litSquare.animate(
+			{
+				opacity: 0.3
+		   	}, 400);
+		// fadeTo(1200, 0.3, function(){//console.log('fading in to .3 opacity')
+		// });
+		// $litSquare.css({'animation':'blinker 6s linear 1'});
+			var $litSquare = $('.square2');
+			$litSquare.animate(
+			{
+				opacity: 0.3
+		   	}, 400);
+		// .fadeTo(2000, 0.3, function(){//console.log('fading in to .3 opacity')
+		// });
+		// $litSquare.css({'animation':'blinker 6s linear 1'});
+			var $litSquare = $('.square3');
+			$litSquare.animate(
+			{
+				opacity: 0.3
+		   	}, 400);
+		// .fadeTo(3600, 0.3, function(){//console.log('fading in to .3 opacity')
+		// });
+		// $litSquare.css({'animation':'blinker 6s linear 1'});
+			$levelButton.prop('disabled',false);
+		},4000);
 	}
 
 	var createBoard = function(){
@@ -104,7 +122,10 @@ $(function(){
 		console.log('In the roundWinner function');
 		console.log('You have won the game');
 		$('#startGame').text('Congratulations! You have beaten the level!');
+		playAudio($audio9);
+		playAudio($audio10);
 	}
+
 	var playGame = function(){
 		console.log('In playGame functioon');
 		var $displayRound = $('.round');
@@ -642,6 +663,32 @@ $(function(){
 		console.log('In the lightUpSquare function');
 		var pattern = $levelSequence[rounds - 1].pop();
 		console.log(pattern);
+
+		//For loop to play sounds for lighted up square
+		// for (var i = 0; i < 4; i++) {
+
+		// 	console.log('In the lightUpSquare FOR loop');
+			
+		// 	switch(i)
+		// 	{
+		// 		case 0:
+		// 			setTimeout(function(){playAudio($audio0)}, (i * 600));
+		// 			break;
+		// 		case 1:
+		// 			setTimeout(function(){playAudio($audio1)}, (i * 600));
+		// 			break;
+		// 		case 2:
+		// 			setTimeout(function(){playAudio($audio2)}, (i * 600));
+		// 			break;
+		// 		case 3:
+		// 			setTimeout(function(){playAudio($audio3)}, (i * 600));
+		// 			break;
+		// 		default:
+		// 			break;
+				
+		// 	}
+		// }
+
 		$('#' + pattern).animate(
 		{
 		     opacity: 0.3
@@ -680,10 +727,11 @@ $(function(){
 		    //var score
 		    // $('#player').text(rounds);
 		    rounds++;
+		    playAudio($audio5);
 		    $('.round').text(rounds);
 		    $('.square').unbind();
 
-		    setTimeout(playGame, 800);
+		    setTimeout(playGame, 5000);
 		  }
 
 		}else 
@@ -802,17 +850,20 @@ $(function(){
 //====================================================	
 
 	$levelButton.on('click', determineLevel);
+	//$startGame.on('click', playAudio);
 	$startGame.on('click',function() {
 	  if(gameInPlay == false){
 	    makeLevel();
 	  } 
 	});
+
 	$lastButton.on('click',function(){
 		for (var i = 0; i < $playerSequence.length; i++) 
 		{
 			setTimeout(lastSequence, (i * 600));
 		}
 	});
+
 	$longestButton.on('click',function(){
 		var length = $levelSequence.length;
 		//console.log('length of array: ' + length);
@@ -825,13 +876,13 @@ $(function(){
 		}
 
 	});
+
 	$restartButton.on('click', resetGame);
 //====================================================
 //Game Play
 //====================================================	
 	createBoard();
 });
-
 
 
 //====================================================
