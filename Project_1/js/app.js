@@ -504,7 +504,7 @@ $(function(){
 				$levelSequence.push($levelArray);
 			}
 		}
-		//console.log($levelSequence);
+		// console.log($levelSequence);
 	}
 
 	var extremeLevelObject = function(){
