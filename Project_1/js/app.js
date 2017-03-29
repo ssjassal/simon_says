@@ -58,40 +58,7 @@ $(function(){
 
 		console.log(soundsMuted);
 
-		// if($('.button.mute') == 'mute')
-		// {
-		// 	$audio0.muted = false;
-		// 	$audio1.muted = false;
-		// 	$audio2.muted = false;
-		// 	$audio3.muted = false;
-		// 	$audio4.muted = false;
-		// 	$audio5.muted = false;
-		// 	$audio6.muted = false;
-		// 	$audio7.muted = false;
-		// 	$audio8.muted = false;
-		// 	$audio9.muted = false;
-		// 	$audio10.muted = false;
-		// 	$muteButton.removeClass('mute');
-		// 	$muteButton.text('Unmute Sounds');
-			
-		// }else
-		// {
-		// 	$audio0.muted = true;
-		// 	$audio1.muted = true;
-		// 	$audio2.muted = true;
-		// 	$audio3.muted = true;
-		// 	$audio4.muted = true;
-		// 	$audio5.muted = true;
-		// 	$audio6.muted = true;
-		// 	$audio7.muted = true;
-		// 	$audio8.muted = true;
-		// 	$audio9.muted = true;
-		// 	$audio10.muted = true;
-		// 	$muteButton.addClass('mute');
-		// 	$muteButton.text('Unmute Sounds');
-		// 	//$muteButton = $('.button mute');
-		// 	$muteButton.on('click', muteSounds);
-		// }
+		
 	}
 
 	var resetGame = function(){ //NEED TO HAVE RESTART BUTTON AVAIALBLE DURING GAME PLAY AS WELL
@@ -803,6 +770,11 @@ $(function(){
 		  // $levelButton.unbind();
 		  //console.log(rounds);
 		  // $('#simon').text(rounds);
+		  setTimeout(function(){$('.square').css('opacity','.3')},500);
+		  $startGame.prop('disabled',true);
+		  $longestButton.prop('disabled',true);
+		  $lastButton.prop('disabled',true);
+		  $muteButton.prop('disabled',true);
 	 	  $restartButton.prop('disabled',false);
 	 	  $restartButton.on('click', resetGame);
 		  
@@ -949,7 +921,7 @@ $(function(){
 
 
 //====================================================
-//Commented Code Possible Reuse
+//Graveyard Code (Possible Reuse)
 //====================================================	
 	// switch($lightUp[i]){
 	// 	case 0:
@@ -1098,4 +1070,40 @@ $(function(){
 // 	    }, 1);
 
 // 	$square.on('click',verifyColor);
+// }
+
+
+// if($('.button.mute') == 'mute')
+// {
+// 	$audio0.muted = false;
+// 	$audio1.muted = false;
+// 	$audio2.muted = false;
+// 	$audio3.muted = false;
+// 	$audio4.muted = false;
+// 	$audio5.muted = false;
+// 	$audio6.muted = false;
+// 	$audio7.muted = false;
+// 	$audio8.muted = false;
+// 	$audio9.muted = false;
+// 	$audio10.muted = false;
+// 	$muteButton.removeClass('mute');
+// 	$muteButton.text('Unmute Sounds');
+	
+// }else
+// {
+// 	$audio0.muted = true;
+// 	$audio1.muted = true;
+// 	$audio2.muted = true;
+// 	$audio3.muted = true;
+// 	$audio4.muted = true;
+// 	$audio5.muted = true;
+// 	$audio6.muted = true;
+// 	$audio7.muted = true;
+// 	$audio8.muted = true;
+// 	$audio9.muted = true;
+// 	$audio10.muted = true;
+// 	$muteButton.addClass('mute');
+// 	$muteButton.text('Unmute Sounds');
+// 	//$muteButton = $('.button mute');
+// 	$muteButton.on('click', muteSounds);
 // }
