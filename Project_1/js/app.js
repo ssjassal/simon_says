@@ -884,4 +884,3 @@ $(function(){
 
 // 	$square.on('click',verifyColor);
 // }
-
