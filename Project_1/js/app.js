@@ -598,11 +598,11 @@ $(function(){
 		
 		console.log('In the lightUpBoard function');
 		console.log($levelSequence);
+		console.log($levelSequence[rounds - 1]);
 		//console.log($lightUp);
 		for (var i = 0; i < $levelSequence[rounds - 1].length; i++) {
 
 			console.log('In the lightUpBoard FOR loop');
-			console.log($levelSequence[rounds - 1]);
 			var delayTime = i * 600;
 			setTimeout(lightUpSquare, delayTime);
 		}
@@ -629,7 +629,6 @@ $(function(){
 	   	  // add the click event once cpu is finished showing the pattern
 	   	  $('.square').on('click', verifyColor);
 	   	}
-
 	}
 
 	var verifyColor = function(){
@@ -639,20 +638,23 @@ $(function(){
 		var $clickedSquare = $playerSequence.shift();
 		var $squareId = $(this).attr('id');
 
-		$(this).animate({opacity:.3},200).animate({opacity:1},100)
+		$(this).animate({opacity:0.3},200).animate({opacity:1},100);
 
 		// if yes remove from used pattern and add to pattern
-		console.log($clickedSquare+' '+' '+$SquareId);
+		console.log($clickedSquare+' '+' '+$squareId);
 		if ($clickedSquare == $squareId) {
 		  //adds item back to pattern array
 		  $levelSequence[rounds - 1].push($clickedSquare);
 		  console.log('$levelSequence if correct: '+$levelSequence[rounds - 1]);
 
 		  if ($playerSequence.length <= 0) {
-		    $('.round').text(rounds);
+		    
 		    //var score
 		    // $('#player').text(rounds);
 		    rounds++;
+		    $('.round').text(rounds);
+		    $('.square').unbind();
+
 		    setTimeout(playGame, 800);
 		  }
 
@@ -670,6 +672,25 @@ $(function(){
 		}
 	}
 
+	var lastSequence = function (){
+
+		console.log('In the lastSequence function');
+		console.log($playerSequence);
+		var tempSquare = $playerSequence.shift();
+		
+		//var tempSquare = $levelSequence[rounds-1].pop();
+		console.log(tempSquare);
+		$('#' + tempSquare).animate(
+		{
+		     opacity: 0.3
+	   	}, 200).animate(
+	   	{
+		     opacity: 1
+	   	}, 100);
+		
+	   	$playerSequence.push(tempSquare);
+
+	}
 
 //====================================================
 //Event Handlers
@@ -685,6 +706,7 @@ $(function(){
 			$('#content p').text('Easy');
 			$(this).addClass('clicked1');
 			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
 
 		}
 		else if($(this).attr('class') == 'button clicked1')
@@ -693,6 +715,7 @@ $(function(){
 			$(this).removeClass('clicked1');
 			$(this).addClass('clicked2');
 			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
 			// $levelButton.on('click', determineLevel);
 
 		}else if($(this).attr('class') == 'button clicked2')
@@ -701,6 +724,7 @@ $(function(){
 			$(this).removeClass('clicked2');
 			$(this).addClass('clicked3');
 			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
 			// $levelButton.on('click', determineLevel);
 
 		}else if($(this).attr('class') == 'button clicked3')
@@ -709,6 +733,7 @@ $(function(){
 			$(this).removeClass('clicked3');
 			$(this).addClass('clicked4');
 			$startGame.prop('disabled', false);
+			$lastButton.prop('disabled', false);
 			// $levelButton.on('click', determineLevel);
 		}else if($(this).attr('class') == "button clicked4")
 		{
@@ -726,6 +751,12 @@ $(function(){
 	  if(gameInPlay == false){
 	    makeLevel();
 	  } 
+	});
+	$lastButton.on('click',function(){
+		for (var i = 0; i < $playerSequence.length; i++) 
+		{
+			setTimeout(lastSequence, (i * 600));
+		}
 	});
 
 //====================================================
