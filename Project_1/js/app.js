@@ -25,7 +25,7 @@ $(function(){
 //====================================================
 //DOM Manipulation Functions
 //====================================================
-	var resetGame = function(){ 
+	var resetGame = function(){ //NEED TO HAVE RESTART BUTTON AVAIALBLE DURING GAME PLAY AS WELL
 		
 		$levelSequence = [];
 		$playerSequence =[];
@@ -265,6 +265,7 @@ $(function(){
 		
 		gameInPlay = true;
 		$levelButton.prop('disabled', true);
+		$restartButton.prop('disabled', false);
 		// $levelButton.unbind();
 		console.log('In the makeLevel function');
 		$level = $('#content p').text();
@@ -824,7 +825,7 @@ $(function(){
 		}
 
 	});
-
+	$restartButton.on('click', resetGame);
 //====================================================
 //Game Play
 //====================================================	
