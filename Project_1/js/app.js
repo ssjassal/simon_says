@@ -88,7 +88,7 @@ $(function(){
 
 	var instantiateGame = function(){
 		if (soundsMuted == false){
-			//playAudio($audio8);
+			playAudio($audio8);
 		}
 		
 		setTimeout(function(){
