@@ -25,7 +25,7 @@ $(function(){
 //====================================================
 //DOM Manipulation Functions
 //====================================================
-	var resetGame = function(){ //NEED TO REVISIT
+	var resetGame = function(){ 
 		
 		$levelSequence = [];
 		$playerSequence =[];
