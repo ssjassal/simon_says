@@ -447,7 +447,7 @@ $(function(){
 
 	var mediumLevelObject = function(){
 
-		for (var i = 1; i < 7; i++) 
+		for (var i = 1; i < 6; i++) 
 		{
 			$levelArray = [];
 			//console.log('In the makeLevel FOR loop: ' + i);
@@ -506,16 +506,16 @@ $(function(){
 				}
 				$levelSequence.push($levelArray);
 			}
-			else if(i == 6)
-			{
-				//console.log('round 6');
-				for (var j = 0; j < 14; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
+			// else if(i == 6)
+			// {
+			// 	//console.log('round 6');
+			// 	for (var j = 0; j < 14; j++) 
+			// 	{
+			// 		$levelArray.push(Math.floor(Math.random()*4));
+			// 		// $levelSequence['round'+ i] = $levelArray;
+			// 	}
+			// 	$levelSequence.push($levelArray);
+			// }
 		}
 		//console.log($levelSequence);
 	}
@@ -532,6 +532,71 @@ $(function(){
 				for (var j = 0; j < 4; j++) 
 				{
 					console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					//console.log($levelArray);
+				}
+				$levelSequence.push($levelArray);
+				//console.log($levelSequence);
+			}else if(i == 2)
+			{
+				//console.log('round 2');
+				for (var j = 0; j < 7; j++) 
+				{
+					// $levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log(j);
+					$levelArray.push(Math.floor(Math.random()*4));
+					
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 3)
+			{
+				//console.log('round 3');
+				for (var j = 0; j < 10; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+					//console.log($levelArray);
+					// console.log($levelSequence);
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 4)
+			{
+				//console.log('round 4');
+				for (var j = 0; j < 13; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}else if(i == 5)
+			{
+				//console.log('round 5');
+				for (var j = 0; j < 17; j++) 
+				{
+					$levelArray.push(Math.floor(Math.random()*4));
+					// $levelSequence['round'+ i] = $levelArray;
+				}
+				$levelSequence.push($levelArray);
+			}
+		}
+		// console.log($levelSequence);
+	}
+
+	var extremeLevelObject = function(){
+
+		for (var i = 1; i < 6; i++) 
+		{
+			$levelArray = [];
+			//console.log('In the makeLevel FOR loop: ' + i);
+			if(i == 1)
+			{
+				//console.log('round 1');
+				for (var j = 0; j < 4; j++) 
+				{
+					//console.log(j);
 					$levelArray.push(Math.floor(Math.random()*4));
 					//console.log($levelArray);
 				}
@@ -581,91 +646,26 @@ $(function(){
 				}
 				$levelSequence.push($levelArray);
 			}
-		}
-		// console.log($levelSequence);
-	}
-
-	var extremeLevelObject = function(){
-
-		for (var i = 1; i < 8; i++) 
-		{
-			$levelArray = [];
-			//console.log('In the makeLevel FOR loop: ' + i);
-			if(i == 1)
-			{
-				//console.log('round 1');
-				for (var j = 0; j < 4; j++) 
-				{
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					//console.log($levelArray);
-				}
-				$levelSequence.push($levelArray);
-				//console.log($levelSequence);
-			}else if(i == 2)
-			{
-				//console.log('round 2');
-				for (var j = 0; j < 9; j++) 
-				{
-					// $levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log(j);
-					$levelArray.push(Math.floor(Math.random()*4));
-					
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 3)
-			{
-				//console.log('round 3');
-				for (var j = 0; j < 14; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-					//console.log($levelArray);
-					// console.log($levelSequence);
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 4)
-			{
-				//console.log('round 4');
-				for (var j = 0; j < 19; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}else if(i == 5)
-			{
-				//console.log('round 5');
-				for (var j = 0; j < 24; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-			else if(i == 6)
-			{
-				//console.log('round 6');
-				for (var j = 0; j < 29; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
-			else if(i == 7)
-			{
-				//console.log('round 7');
-				for (var j = 0; j < 34; j++) 
-				{
-					$levelArray.push(Math.floor(Math.random()*4));
-					// $levelSequence['round'+ i] = $levelArray;
-				}
-				$levelSequence.push($levelArray);
-			}
+			// else if(i == 6)
+			// {
+			// 	//console.log('round 6');
+			// 	for (var j = 0; j < 29; j++) 
+			// 	{
+			// 		$levelArray.push(Math.floor(Math.random()*4));
+			// 		// $levelSequence['round'+ i] = $levelArray;
+			// 	}
+			// 	$levelSequence.push($levelArray);
+			// }
+			// else if(i == 7)
+			// {
+			// 	//console.log('round 7');
+			// 	for (var j = 0; j < 34; j++) 
+			// 	{
+			// 		$levelArray.push(Math.floor(Math.random()*4));
+			// 		// $levelSequence['round'+ i] = $levelArray;
+			// 	}
+			// 	$levelSequence.push($levelArray);
+			// }
 		}
 		//console.log($levelSequence);
 	}
@@ -698,24 +698,32 @@ $(function(){
 
 		// 	console.log('In the lightUpSquare FOR loop');
 			
-		// 	switch(i)
-		// 	{
-		// 		case 0:
-		// 			setTimeout(function(){playAudio($audio0)}, (i * 600));
-		// 			break;
-		// 		case 1:
-		// 			setTimeout(function(){playAudio($audio1)}, (i * 600));
-		// 			break;
-		// 		case 2:
-		// 			setTimeout(function(){playAudio($audio2)}, (i * 600));
-		// 			break;
-		// 		case 3:
-		// 			setTimeout(function(){playAudio($audio3)}, (i * 600));
-		// 			break;
-		// 		default:
-		// 			break;
-				
-		// 	}
+		switch(pattern)
+		{
+			case 0:
+				if (soundsMuted == false){
+					playAudio($audio0);
+				}
+				break;
+			case 1:
+				if (soundsMuted == false){
+					playAudio($audio1);
+				}
+				break;
+			case 2:
+				if (soundsMuted == false){
+					playAudio($audio2);
+				}
+				break;
+			case 3:
+				if (soundsMuted == false){
+					playAudio($audio3);
+				}
+				break;
+			default:
+				break;
+			
+		}
 		// }
 
 		$('#' + pattern).animate(
@@ -768,6 +776,9 @@ $(function(){
 		}else 
 		{
 		  console.log('if incorrect: '+ $squareId);
+		  if (soundsMuted == false){
+		  	playAudio($audio6);
+		  }
 		  $('#content p').text('Game Over, Click Restart Game to Play Again');
 		  gameInPlay = false;
 		  // $levelButton.unbind();
@@ -846,6 +857,32 @@ $(function(){
 		
 		//var tempSquare = $levelSequence[rounds-1].pop();
 		console.log(tempSquare);
+		switch(tempSquare)
+		{
+			case 0:
+				if (soundsMuted == false){
+					playAudio($audio0);
+				}
+				break;
+			case 1:
+				if (soundsMuted == false){
+					playAudio($audio1);
+				}
+				break;
+			case 2:
+				if (soundsMuted == false){
+					playAudio($audio2);
+				}
+				break;
+			case 3:
+				if (soundsMuted == false){
+					playAudio($audio3);
+				}
+				break;
+			default:
+				break;
+			
+		}
 		$('#' + tempSquare).animate(
 		{
 		     opacity: 0.3
@@ -859,22 +896,33 @@ $(function(){
 	}
 
 	var longestSequence = function(sequenceNum){
-		// var sequenceArrayOne = [];
-		// var tempArray = [];
-		// console.log('In the longestSequence function');
-		// sequenceArrayOne = sequenceArray;
-		// //tempArray = sequenceArray;
-		//console.log(sequenceArray);
-		// // console.log($longestArray.length);
-		//var tempSquare = sequenceArray.pop();
-		// console.log(sequenceArrayOne);
-		//var tempSquare = $levelSequence[rounds-1].pop();
-	
 
-		//var tempmap = sequenceArray.map();
-		//console.log(tempmap);
-
-		//console.log('longestSequence function: ' + tempSquare);
+		switch(sequenceNum)
+		{
+			case 0:
+				if (soundsMuted == false){
+					playAudio($audio0);
+				}
+				break;
+			case 1:
+				if (soundsMuted == false){
+					playAudio($audio1);
+				}
+				break;
+			case 2:
+				if (soundsMuted == false){
+					playAudio($audio2);
+				}
+				break;
+			case 3:
+				if (soundsMuted == false){
+					playAudio($audio3);
+				}
+				break;
+			default:
+				break;
+			
+		}
 		$('#' + sequenceNum).animate(
 		{
 		     opacity: 0.3
@@ -883,11 +931,6 @@ $(function(){
 		     opacity: 1
 	   	}, 100);
 		
-	   	//tempArray.push(tempSquare);
-	   	// tempArray.reverse();
-	   	// var length = $levelSequence.length;
-	   	// $levelSequence[length-1] = tempArray;
-	   	// console.log(tempArray);
 	}
 
 //====================================================
@@ -1121,3 +1164,26 @@ $(function(){
 // 	//$muteButton = $('.button mute');
 // 	$muteButton.on('click', muteSounds);
 // }
+
+// var sequenceArrayOne = [];
+// var tempArray = [];
+// console.log('In the longestSequence function');
+// sequenceArrayOne = sequenceArray;
+// //tempArray = sequenceArray;
+//console.log(sequenceArray);
+// // console.log($longestArray.length);
+//var tempSquare = sequenceArray.pop();
+// console.log(sequenceArrayOne);
+//var tempSquare = $levelSequence[rounds-1].pop();
+
+
+//var tempmap = sequenceArray.map();
+//console.log(tempmap);
+
+//console.log('longestSequence function: ' + tempSquare);
+
+//tempArray.push(tempSquare);
+// tempArray.reverse();
+// var length = $levelSequence.length;
+// $levelSequence[length-1] = tempArray;
+// console.log(tempArray);
