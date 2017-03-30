@@ -33,7 +33,7 @@ Here are the steps to get a development environment up and running
 
 1. Create a local development folder on your computer.
 2. Go to github.com to create a Github profile and repository.
-   Instructions can be found here:[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
+   Instructions can be found here: [Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
 3. Configure your github profile in Terminal. 
    Instructions can be found here: [Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 4. Clone the wdir-projects repository above
