@@ -4,19 +4,11 @@ Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard
 
 ## Getting Started
 
-These instructions will help you play the game should you not wish to download a copy of the project. 
+These instructions will help you play the game should you not wish to download a copy of the project. **You can access the game on my live site here: [Soniya Jassal (SSJassal) Live Site](https://ssjassal.github.io/wdir-projects/Project_1/index.html)**
 
-```
-You can access the game on my live site here: 
-[Soniya Jassal (SSJassal) Live Site](https://ssjassal.github.io/wdir-projects/Project_1/index.html)
-```
 
-Should you want to see the code and modify, these instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. Please clone my repository for Project_1 from there you will find the index.html file which you can open in your browser and launch the game.  To make modifications of your own, the app.js file is located in the js folder with Project_1. 
+Should you want to see the code and modify, these instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. Please clone my repository for Project_1 from there you will find the index.html file which you can open in your browser and launch the game.  To make modifications of your own, the app.js file is located in the js folder with Project_1. **You can access the respository here: [SSJassal WDIR Projects Repository](https://github.com/ssjassal/wdir-projects)**
 
-```
-You can access the respository here: 
-[SSJassal WDIR Projects Repository](https://github.com/ssjassal/wdir-projects)
-```
 
 ### Prerequisites
 
@@ -34,7 +26,6 @@ For game play while having a copy of the project for development you will the fo
 4. Working Browser(IE, Chrome, Mozilla, Firefox)
 5. Some knowledge of JavaScript, Jquery, HTML, CSS
 ```
-
 ### Installing
 
 Here are the steps to get a development environment up and running
@@ -42,26 +33,16 @@ Here are the steps to get a development environment up and running
 
 1. Create a local development folder on your computer.
 2. Go to github.com to create a Github profile and repository.
- 
-```
    Instructions can be found here:[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
-```
 3. Configure your github profile in Terminal. 
-
-```
    Instructions can be found here: [Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
-```
 4. Clone the wdir-projects repository above
 5. Pull the wdir-projects folder into your local folder.
 6. Open wdir-projects folder with your text editor
 7. Open the index.html and open in browser
 8. Open app.js and style.css to make further modifications
 9. Save and add, commit, and push to your Github repository
-
-```
-	Instructions can be found here: [Recording Changes to a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
-```
-
+   Instructions can be found here: [Recording Changes to a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
 
 ## Unsolved Problems
 
