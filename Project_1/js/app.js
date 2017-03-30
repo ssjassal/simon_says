@@ -310,7 +310,6 @@ $(function(){
 					$levelArray.push(checkNum);
 					
 					//console.log($levelArray);
-					}
 				}
 				$levelSequence.push($levelArray);
 			}else if(i == 3)
