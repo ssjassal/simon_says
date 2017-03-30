@@ -147,5 +147,5 @@ $longestButton.on('click',function(){
 
 ## Acknowledgments
 
-* Hat tip to Vince Brown, who aided in the blinking of my squares and control flow in his example:[Vince Brown Code Pen Simon](http://codepen.io/Vince_Brown/pen/Fzphm)
+* Hat tip to Vince Brown, who aided in the blinking of my squares and control flow in his example: [Vince Brown Code Pen Simon](http://codepen.io/Vince_Brown/pen/Fzphm)
 * Hasbro, Milton Bradley
