@@ -1,4 +1,3 @@
-# wdir-projects
 # Simon - The Game
 
 Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard J. Morrison, with software programming by Lenny Cope, The device creates a series of tones and lights and requires a user to repeat the series. If the user succeeds the series becomes progressively longer and more complex. Once the user fails, the game is over. The original version was manufactured and distributed by Milton Bradley but after they went out of business, the product was taken over by Hasbro. This version of Simon expands the basic game play to have a 4 levels a player can choose from and each level provind 5 rounds.  Each round in a level is set with a new sequence with an added sequence after the first round.
@@ -8,13 +7,15 @@ Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard
 These instructions will help you play the game should you not wish to download a copy of the project. 
 
 ```
-You can access the game on my live site here: [Soniya Jassal (SSJassal) Live Site](https://ssjassal.github.io/wdir-projects/Project_1/index.html)
+You can access the game on my live site here: 
+[Soniya Jassal (SSJassal) Live Site](https://ssjassal.github.io/wdir-projects/Project_1/index.html)
 ```
 
 Should you want to see the code and modify, these instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. Please clone my repository for Project_1 from there you will find the index.html file which you can open in your browser and launch the game.  To make modifications of your own, the app.js file is located in the js folder with Project_1. 
 
 ```
-You can access the respository here: [SSJassal WDIR Projects Repository](https://github.com/ssjassal/wdir-projects)
+You can access the respository here: 
+[SSJassal WDIR Projects Repository](https://github.com/ssjassal/wdir-projects)
 ```
 
 ### Prerequisites
@@ -40,18 +41,18 @@ Here are the steps to get a development environment up and running
 
 ```
 1. Create a local development folder on your computer.
-2. Go to github.com to create a Github profile and repository. 
-   Instructions can be found here:[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
-3. Configure your github profile in Terminal. 
-   Instructions can be found here: [Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+2. Go to github.com to create a Github profile and repository. ```
+   Instructions can be found here:[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)```
+3. Configure your github profile in Terminal. ```
+   Instructions can be found here: [Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)```
 4. Clone the wdir-projects repository above
 5. Pull the wdir-projects folder into your local folder.
 6. Open wdir-projects folder with your text editor
 7. Open the index.html and open in browser
 8. Open app.js and style.css to make further modifications
-9. Save and add, commit, and push to your Github repository
+9. Save and add, commit, and push to your Github repository```
 	Instructions can be found here: [Recording Changes to a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
-```
+
 
 ## Unsolved Problems
 
@@ -142,7 +143,7 @@ $longestButton.on('click',function(){
 
 ## Authors
 
-* **Soniya Jassal** - *Initial work* - [ssjassal](https://github.com/ssjassal)
+* **Soniya Jassal** - *Initial work* - [SSJassal](https://github.com/ssjassal)
 
 ## Acknowledgments
 
