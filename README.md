@@ -33,7 +33,7 @@ Here are the steps to get a development environment up and running
 
 1. Create a local development folder on your computer.
 2. Go to github.com to create a Github profile and repository.
-   Instructions can be found here:[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
+   Instructions can be found here: [Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
 3. Configure your github profile in Terminal. 
    Instructions can be found here: [Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
 4. Clone the wdir-projects repository above
@@ -53,6 +53,16 @@ This game had two unsolved problems
 
 
 The sounds were not as difficult as the longest sequence being played.  The sounds worked for most everything, except for the player when they clicked a square to hear the sound. Even using the same code for Simon (the computer) to play the sounds that to the player, which worked, they would not play when the player needed to repeat the sequence.  The sounds also would not play for Simon if the numbers in the sequence repeated for the second repeated number i.e.([1,1,2,2]). This was fixed to ensure no sequence has a repeated number in sequential order.
+
+### Sounds Not Repeating Code Fix
+```
+var checkNum = Math.floor(Math.random()*4);
+while (checkNum == $levelArray[j-1])
+{
+	checkNum = Math.floor(Math.random()*4);
+}
+$levelArray.push(checkNum);
+```
 
 The longest sequence is a function which was to obtain the last round sequence and show it to the player.  It was just for the player to see what was up ahead.  The problem with this function, while using the same functionality that is there for Simon to light up normal rounds, will display (blink) all the squares at once and play all the sounds at once. No matter what has been tried it breaks.  As of now the longest sequence has been turned into a "Fun Button" called "Simon on Roids", to bring some laughter to the player.
 
