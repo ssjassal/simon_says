@@ -39,19 +39,28 @@ For game play while having a copy of the project for development you will the fo
 
 Here are the steps to get a development environment up and running
 
-```
+
 1. Create a local development folder on your computer.
-2. Go to github.com to create a Github profile and repository. ```
-   Instructions can be found here:[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)```
-3. Configure your github profile in Terminal. ```
-   Instructions can be found here: [Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)```
+2. Go to github.com to create a Github profile and repository.
+ 
+```
+   Instructions can be found here:[Getting a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
+```
+3. Configure your github profile in Terminal. 
+
+```
+   Instructions can be found here: [Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+```
 4. Clone the wdir-projects repository above
 5. Pull the wdir-projects folder into your local folder.
 6. Open wdir-projects folder with your text editor
 7. Open the index.html and open in browser
 8. Open app.js and style.css to make further modifications
-9. Save and add, commit, and push to your Github repository```
+9. Save and add, commit, and push to your Github repository
+
+```
 	Instructions can be found here: [Recording Changes to a Git Repository](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository)
+```
 
 
 ## Unsolved Problems
