@@ -5,7 +5,7 @@
 //Modification to the game is that a new sequence is presented each round with added difficulty
 //based on level chosen by the player up to 5 rounds in each level.
 
-console.log('Simon has been initialized');
+//console.log('Simon has been initialized');
 
 //============================================================================================================
 //---------------------------------------------Global variables-----------------------------------------------
@@ -19,7 +19,7 @@ var tempArray = [];
 var soundsMuted = false;
 
 $(function(){
-	console.log('In the jquery');
+	//console.log('In the jquery');
 
 //============================================================================================================
 //-----------------------------------------------Grab Elements------------------------------------------------
