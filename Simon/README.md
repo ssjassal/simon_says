@@ -4,7 +4,7 @@ Simon is an electronic game of memory skill invented by Ralph H. Baer and Howard
 
 ## Getting Started
 
-These instructions will help you play the game should you not wish to download a copy of the project. **You can access the game on my live site here: [Soniya Jassal (SSJassal) Live Site](https://ssjassal.github.io/wdir-projects/Project_1/index.html)**
+These instructions will help you play the game should you not wish to download a copy of the project. **You can access the game on my live site here: [Soniya Jassal (SSJassal) Live Site](https://ssjassal.github.io/simon_says/Simon/index.html)**
 
 
 Should you want to see the code and modify, these instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system. Please clone my repository for Project_1 from there you will find the index.html file which you can open in your browser and launch the game.  To make modifications of your own, the app.js file is located in the js folder with Project_1. **You can access the respository here: [SSJassal WDIR Projects Repository](https://github.com/ssjassal/wdir-projects)**
